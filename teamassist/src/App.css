@@ -1,11 +1,14 @@
 
 
 .App {
-  text-align: center;
+  text-align: center; 
   background-color: #7ba7b5;
   min-height: 100vh;
 }
 
+.container-section {
+  padding-top: 7%;
+}
 
 
 /* @media (prefers-reduced-motion: no-preference) {
