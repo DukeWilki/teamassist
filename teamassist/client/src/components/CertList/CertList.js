@@ -4,7 +4,7 @@ import "./CertList.css";
 function CertList() {
   // Render Login form
   return (
-    <div class="menu-list">
+    <div className="menu-list">
       <ul>
         <button className="text-button">Member Fees</button>
       </ul>

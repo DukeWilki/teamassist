@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./../../components/Header/Header";
-import MenuItems from "./../../components/MenuItems/MenuItems";
+import MenuItems from "./MenuItems/MenuItems";
 import Footer from "./../../components/Footer/Footer";
 
 function Menu() {

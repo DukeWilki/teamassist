@@ -4,7 +4,7 @@ import "./MenuItems.css";
 function MenuItems() {
   // Render Login form
   return (
-    <div class="menu-list">
+    <div className="menu-list">
       <ul>
         <button className="text-button">Member Lookup</button>
       </ul>

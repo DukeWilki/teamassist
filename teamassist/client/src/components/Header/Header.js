@@ -6,7 +6,7 @@ function Header() {
   // Render Login form
   return (
     <header className="App-header">
-      <img src={logo} className="App-logo" alt="logo" />
+      <img src={logo} className="App-logo" alt="Maia Outrigger Canoe Club logo" />
     </header>
   );
 }

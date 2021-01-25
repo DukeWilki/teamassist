@@ -7,7 +7,7 @@ function Footer() {
   return (
     <footer className="App-footer">
       <p className="Para-footer">Maia OCC committee app is powered by</p>
-      <img src={logo} className="Teamassist-logo" alt="logo" />
+      <img src={logo} className="Teamassist-logo" alt="Team Assist logo" />
     </footer>
   );
 }
