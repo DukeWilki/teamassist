@@ -20,11 +20,11 @@ router.get("/api/test", (req, res) => {
 
 })
 
-router.post("/login", passport.authenticate("local"), (req, res) => {
+router.post("/login", (req, res) => {
   res.json({
     email: req.body.email,
     password: req.body.password,
-    id: req.body.id,
+    // id: req.body.id,
   });
 });
 

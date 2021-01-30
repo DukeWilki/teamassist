@@ -7,12 +7,20 @@ const passport = require("passport");
 const connectDb = require("./config/database");
 // const MongoStore = require("connect-mongo")(session);
 const routes = require("./routes/api");
-const loginroutes = require("./routes/api_login");
+// const loginroutes = require("./routes/api_login");
+const certlistroutes = require("./routes/api_certlist");
+const memberlistroutes = require("./routes/api_memberlist");
+
+// // RESET TABLES ON INITIAL LOAD
+// const db = require('./models/index');
+// db.sequelize.sync({force: true});
+
+
 dotenv.config({ path: ".env" });
 const app = express();
 connectDb();
 // Configure body parsing for AJAX requests
-// app.use(bodyParser.json());
+app.use(express.json());
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(cookieParser(process.env.SESSION_SECRET));
 // app.use(cors(corsConfig));
@@ -36,12 +44,27 @@ if (process.env.NODE_ENV === "production") {
 //         }),
 //     })
 // );
+
+app.all("*", function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Content-Type,Content-Length, Authorization, Accept,X-Requested-With"
+    );
+    res.header("Access-Control-Allow-Methods", "PUT,POST,GET,DELETE,OPTIONS");
+    next();
+  });
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 // Add routes, both API and view
 // app.use("/api", passportConfig.authenticate('local'));
 app.use('/api',  routes);
-app.use('/api',  loginroutes);
+// app.use('/api',  loginroutes);
+app.use('/api',  certlistroutes);
+app.use('/api',  memberlistroutes);
+
 // Start the API server
 app.listen(PORT, () =>
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)

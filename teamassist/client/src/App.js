@@ -5,6 +5,8 @@ import Login from "./containers/Login/Login";
 import Menu from "./containers/Menu/Menu";
 import CertSelection from "./containers/CertSelection/CertSelection";
 import CertSummary from "./containers/CertSummary/CertSummary";
+import MemberSelection from "./containers/MemberSelection/MemberSelection";
+// import MemberSummary from "./containers/MemberSummary/MemberSummary";
 import EditCert from "./containers/EditCert/EditCert";
 
 function App() {
@@ -19,7 +21,7 @@ function App() {
       <Menu />
       <CertSelection />
       <CertSummary />
-      {/* <MemberSelection /> */}
+      <MemberSelection />
       {/* <MemberSummary /> */}
       <EditCert />
       {/* <NewMember /> */}

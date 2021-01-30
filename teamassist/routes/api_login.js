@@ -5,10 +5,11 @@ const { Router } = require("express");
 const router = express.Router();
 
 router.post("/api/login", passport.authenticate("local"), (req, res) => {
+    console.log("api")
   res.json({
     email: req.body.email,
     password: req.body.password,
-    id: req.body.id,
+    // id: req.body.id,
   });
 });
 

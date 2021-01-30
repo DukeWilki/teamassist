@@ -4,10 +4,12 @@ import "./CertSummaryList.css";
 function CertSummaryList() {
   return (
     <div >
-      <ol>
-        <h2>(selected cert)</h2>
-      </ol>
+      <ul>
+        <h2>(selected cert)</h2>  
+      </ul>
+
       <li>
+        
         <button className="text-button">John Smith expires DD-MM-YYYY</button>
       </li>
       <li>

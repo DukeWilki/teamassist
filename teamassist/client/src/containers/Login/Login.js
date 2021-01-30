@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+import axios from "axios";
 
 
 function Login() {
@@ -16,9 +17,21 @@ function Login() {
         e.preventDefault()
         // validation
         console.log(formState);
-        fetch("http://localhost:3001/api/login", {method: "POST", body: JSON.stringify({username: formState.email, password: formState.password})}).then(res=>{
-          console.log(res);
-        })
+        axios({
+          method: 'post',
+          url: "http://localhost:3001/api/login",
+          data: {
+            username: formState.email,
+            password: formState.password
+          },headers: {
+            "Access-Control-Allow-Origin": true
+          }
+        });
+
+
+        // axios("http://localhost:3001/api/login", {method: "POST", body: JSON.stringify({username: formState.email, password: formState.password})}).then(res=>{
+        //   console.log(res);
+        // })
         
         
       }}>

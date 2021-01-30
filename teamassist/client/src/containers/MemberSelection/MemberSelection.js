@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../../components/Header/Header";
-import CertList from "./CertList/CertList";
+import MemberList from "./MemberList/MemberList";
 import Footer from "../../components/Footer/Footer";
 
-function CertSelection() {
+function MemberSelection() {
   return (
     <div>
       <Header />
-      <CertList />
+      <MemberList />
       <Footer />
     </div>
   );
 }
-export default CertSelection;
+export default MemberSelection;

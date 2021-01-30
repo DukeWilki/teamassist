@@ -1,7 +1,7 @@
 import React from "react";
 import "./CertSummary.css";
 import Header from "../../components/Header/Header";
-import CertSummaryList from "../../components/CertSummaryList/CertSummaryList";
+import CertSummaryList from "./CertSummaryList/CertSummaryList";
 import Footer from "../../components/Footer/Footer";
 
 function CertSummary() {

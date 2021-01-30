@@ -5,11 +5,12 @@ const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
 
 
+
 const basename = path.basename(module.filename);
 const config = {
   username: process.env.DB_USERNAME || 'root',
-  password: process.env.DB_PASSWORD || 'root',
-  database: process.env.DB_NAME || 'my_database_name',
+  password: process.env.DB_PASSWORD || 'Queenw00d.',
+  database: process.env.DB_NAME || 'teamassist',
   host: process.env.DB_HOSTNAME || 'localhost',
   port: process.env.DB_PORT || 3306,
 };
