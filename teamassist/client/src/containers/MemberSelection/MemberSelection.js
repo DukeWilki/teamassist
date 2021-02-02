@@ -6,9 +6,9 @@ import Footer from "../../components/Footer/Footer";
 function MemberSelection() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <MemberList />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

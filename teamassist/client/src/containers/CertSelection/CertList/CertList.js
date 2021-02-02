@@ -20,42 +20,16 @@ function CertList() {
   }, []);
 
 
-  // Render Login form
+  // Render cert list
   return (
     <div className="menu-list">
-
-
       {certs.map((cert) => {
-
         return (
-          <ul>
-            <button className="text-button">{cert.certname}</button>
+          <ul key={cert.id}>
+            <button className="text-button"> {cert.certname}</button>
           </ul>
         )
-
       })}
-{/* 
-      <ul>
-        <button className="text-button">Membedr Fees</button>
-      </ul>
-      <ul>
-        <button className="text-button">AOCRA Membrship</button>
-      </ul>
-      <ul>
-        <button className="text-button">YBSC Membership</button>
-      </ul>
-      <ul>
-        <button className="text-button">Huli Test</button>
-      </ul>
-      <ul>
-        <button className="text-button">Swim Test</button>
-      </ul>
-      <ul>
-        <button className="text-button">Working With Children Check</button>
-      </ul>
-      <ul>
-        <button className="text-button">First Aid Certificate</button>
-      </ul> */}
     </div>
   );
 }

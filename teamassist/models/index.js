@@ -40,9 +40,9 @@ Object.keys(db).forEach((modelName) => {
 // JOINING TABLES FOR MEMBER
 db.Member.hasMany(db.Record, { foreignKey: 'member_id' })
 db.Record.belongsTo(db.Member, { foreignKey: 'member_id' })
-// Post.find({ where: { ...}, include: [Disease]})
 
-// JOINING TABLES FOR CERT
+
+// // JOINING TABLES FOR CERT
 db.Cert.hasMany(db.Record, { foreignKey: 'cert_id' })
 db.Record.belongsTo(db.Cert, { foreignKey: 'cert_id' })
 

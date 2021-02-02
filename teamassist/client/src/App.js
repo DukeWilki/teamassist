@@ -1,3 +1,7 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Members from "./containers/MemberSelection/MemberSelection";
+import Certs from "./containers/CertSelection/CertSelection";
 import "./App.css";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -14,16 +18,29 @@ function App() {
     <div className="App">
       <div className="container-section">
         <Header />
+        <Router>
         <Login />
+        <Footer />
+        <Switch>
+
+          {/* <Menu /> */}
+          <Route path="/" component={Menu} />
+          <Route path="/members" component={MemberSelection} />
+          <Route path="/certs" component={CertSelection} />
+          <Route component={Error} />
+        </Switch>
+      </Router>
+
         <Footer />
       </div>
 
-      <Menu />
-      <CertSelection />
+
+
+      {/* <CertSelection /> */}
       <CertSummary />
-      <MemberSelection />
+      {/* <MemberSelection /> */}
       {/* <MemberSummary /> */}
-      <EditCert />
+      {/* <EditCert /> */}
       {/* <NewMember /> */}
     </div>
   );

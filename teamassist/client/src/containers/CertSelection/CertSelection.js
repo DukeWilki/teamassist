@@ -6,9 +6,9 @@ import Footer from "../../components/Footer/Footer";
 function CertSelection() {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <CertList />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }

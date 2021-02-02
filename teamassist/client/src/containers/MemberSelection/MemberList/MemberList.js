@@ -20,7 +20,7 @@ function MemberList() {
   }, []);
 
 
-  // Render Login form
+  // Render member list
   return (
     <div className="menu-list">
 
@@ -28,8 +28,8 @@ function MemberList() {
       {members.map((member) => {
 
         return (
-          <ul>
-            <button className="text-button">{member.firstname}</button>
+          <ul key={member.id} >
+            <button  className="text-button">{member.firstname} {member.lastname}</button>
           </ul>
         )
 

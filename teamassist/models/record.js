@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
       auth_id: DataTypes.INTEGER,
       auth_date: DataTypes.DATE, //timestamp
       completed: DataTypes.DATE,
-      expdate: DataTypes.DATE,
+      expiry: DataTypes.DATE,
     },
     {
       hooks: {
