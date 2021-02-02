@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Link } from "react-router-dom";
 import CertSelection from "../../../containers/CertSelection/CertSelection";
 import MemberSelection from "../../../containers/MemberSelection/MemberSelection";
+import NewMember from "../../../containers/NewMember/NewMember";
+import EditMember from "../../../containers/EditMember/EditMember";
 
 function MenuItems() {
   // Render Login form
@@ -16,15 +18,14 @@ function MenuItems() {
         <ul>
           <Link to="/certs" ><Route path="/certs" component={CertSelection} />Certificate Check</Link>
         </ul>
+        <ul>
+          <Link to="/new" ><Route path="/new" component={NewMember} />New Member</Link>
+        </ul>
+        <ul>
+          <Link to="/edit" ><Route path="/edit" component={EditMember} />Edit Member</Link>
+        </ul>
       </div>
     </Router>
-
-    // <div className="menu-list">
-    //   <ul><button className="text-button">Member Lookup</button></ul>
-    //   <ul><button className="text-button">Cert Checker</button></ul>
-    //   <ul><button className="text-button">New Member</button></ul>
-    //   <ul><button className="text-button">Edit Permissions</button></ul>
-    // </div>
   );
 }
 

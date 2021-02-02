@@ -31,11 +31,12 @@ function CertSummaryList() {
     <div className="menu-list">
       <h2>Certificate Name</h2>  
 
-      {records.map((record) => {
-
+      {records.map((record, i) => {
+        console.log(record);
         return (
-          <ul key={record.id} >
-            <button className="text-button" >{record.member_id} - {record.cert_id} expires on {parseDate(record.expiry)}</button>
+          <ul key={i} >
+            <button className="text-button" > {record.firstname} {record.lastname} <br></br> {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</button>
+            {/* <button className="text-button" >{record.id} {record.member_id} - {record.cert_id} expires on {record.expiry}</button> */}
 
           </ul>
         )

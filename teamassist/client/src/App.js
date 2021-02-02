@@ -10,6 +10,8 @@ import Menu from "./containers/Menu/Menu";
 import CertSelection from "./containers/CertSelection/CertSelection";
 import CertSummary from "./containers/CertSummary/CertSummary";
 import MemberSelection from "./containers/MemberSelection/MemberSelection";
+import NewMember from "./containers/NewMember/NewMember";
+import EditMember from "./containers/EditMember/EditMember";
 // import MemberSummary from "./containers/MemberSummary/MemberSummary";
 import EditCert from "./containers/EditCert/EditCert";
 
@@ -22,12 +24,8 @@ function App() {
         <Login />
         <Footer />
         <Switch>
-
-          {/* <Menu /> */}
           <Route path="/" component={Menu} />
-          <Route path="/members" component={MemberSelection} />
-          <Route path="/certs" component={CertSelection} />
-          <Route component={Error} />
+          <Route component={Error} /> 
         </Switch>
       </Router>
 
@@ -38,6 +36,7 @@ function App() {
 
       {/* <CertSelection /> */}
       <CertSummary />
+      <NewMember />
       {/* <MemberSelection /> */}
       {/* <MemberSummary /> */}
       {/* <EditCert /> */}
