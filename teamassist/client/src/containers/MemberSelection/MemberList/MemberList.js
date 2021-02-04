@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MemberList.css";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function MemberList() {
 
@@ -29,7 +30,11 @@ function MemberList() {
 
         return (
           <ul key={member.id} >
-            <button  className="text-button">{member.firstname} {member.lastname}</button>
+
+            {/* <a href={"/members/" + member.id}>{member.firstname} {member.lastname}</a> */}
+            <Link to={"/members/" + member.id}>{member.firstname} {member.lastname}</Link>
+
+            {/* <button className="text-button">{member.firstname} {member.lastname}</button> */}
           </ul>
         )
 

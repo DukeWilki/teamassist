@@ -1,15 +1,18 @@
 import React from "react";
 import "./CertSummary.css";
-import Header from "../../components/Header/Header";
 import CertSummaryList from "./CertSummaryList/CertSummaryList";
-import Footer from "../../components/Footer/Footer";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Test from "./../Test/Test";
 
 function CertSummary() {
   return (
     <div>
-      <Header />
+      <Router>
+        <Switch>
+      <Route exact path="/test" component={Test} />
       <CertSummaryList />
-      <Footer />
+      </Switch>
+      </Router>
     </div>
   );
 }

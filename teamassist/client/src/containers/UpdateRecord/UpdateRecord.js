@@ -1,19 +1,25 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams
+} from "react-router-dom";
 
-function EditCert() {
+function UpdateRecord() {
+  const { id } = useParams();
   return (
     <div>
-      <Header />
+    <h2>{id}</h2>
       <h2>(FNAME LNAME)</h2>
       <h2>(selected cert)</h2>
       <p>(Date selection)</p>
       <p>Auth: (current user)</p>
       <button> SAVE </button>
-      <Footer />
     </div>
   );
 }
 
-export default EditCert;
+export default UpdateRecord;

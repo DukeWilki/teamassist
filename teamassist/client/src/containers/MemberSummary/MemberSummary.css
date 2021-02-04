@@ -9,10 +9,3 @@
     text-decoration: underline;
     cursor: pointer;
 }
-
-
-ul {
-    display: flex; 
-    justify-content: center;
-    padding: 0;
-  }

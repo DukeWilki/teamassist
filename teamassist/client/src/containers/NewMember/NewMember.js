@@ -6,7 +6,7 @@ function NewMember() {
   // Render New Member form
   return (
     <div className="new-member-form">
-    <Header />
+      {/* <Header /> */}
       <div className="field">
         <label className="label">First Name</label>
         <div className="control">
@@ -37,8 +37,7 @@ function NewMember() {
         <div className="control">
           <input
             className="input"
-            type="text"
-            placeholder="Email address"
+            type="date"
           ></input>
         </div>
       </div>
@@ -65,11 +64,13 @@ function NewMember() {
         Coach
       </label>
 
-      <Footer />
+      <div className="control">
+        <button className="button is-primary">Submit</button>
+      </div>
+
+      {/* <Footer /> */}
     </div>
   );
 }
 
 export default NewMember;
-
-

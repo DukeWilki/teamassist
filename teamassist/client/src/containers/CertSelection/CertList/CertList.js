@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./CertList.css";
 import axios from 'axios';
+import { Link } from "react-router-dom";
 
 function CertList() {
 
@@ -26,7 +27,9 @@ function CertList() {
       {certs.map((cert) => {
         return (
           <ul key={cert.id}>
-            <button className="text-button"> {cert.certname}</button>
+            {/* <button className="text-button"> {cert.certname}</button> */}
+            {/* <a href={"/certs/" + cert.certname}>{cert.certname}</a> */}
+            <Link to={"/certs/" + cert.certname + cert.id}>{cert.certname}</Link>
           </ul>
         )
       })}

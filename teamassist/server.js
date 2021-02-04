@@ -11,6 +11,8 @@ const routes = require("./routes/api");
 const certlistroutes = require("./routes/api_certlist");
 const memberlistroutes = require("./routes/api_memberlist");
 const recordlistroutes = require("./routes/api_recordlist");
+const profilelistroutes = require("./routes/api_profilelist");
+const recordroutes = require("./routes/api_record");
 
 // // RESET TABLES ON INITIAL LOAD
 // const db = require('./models/index');
@@ -66,6 +68,7 @@ app.use('/api',  routes);
 app.use('/api',  certlistroutes);
 app.use('/api',  memberlistroutes);
 app.use('/api',  recordlistroutes);
+app.use('/api',  profilelistroutes);
 
 // Start the API server
 app.listen(PORT, () =>
