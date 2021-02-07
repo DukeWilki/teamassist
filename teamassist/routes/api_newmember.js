@@ -16,13 +16,21 @@ const router = express.Router();
 //   });
 
 
-  router.post('/newmember', function(req, res, next) {
-    res.locals.connection.query('insert into members(firstname,lastname,email,dob,gender,iscommittee,iscoach) values(''+req.body.firstname+'',''+req.body.lastname+'',''+req.body.email+'',''+req.body.dob+'',''+req.body.gender+'',''+req.body.iscommittee+'',''+req.body.iscoach+'')', 
-     function (error, results, fields) {
-        if(error) throw error;
-        res.send(JSON.stringify(results));
-    });
+router.post('/newmember', function(req, res, next) {
+  res.locals.connection.query('insert into members(firstname,lastname,email,dob,gender,iscommittee,iscoach) values(''Test'',''McTest'',''test@test.com'',''1980-01-01'',''M'',''false'',''false'')', 
+   function (error, results, fields) {
+      if(error) throw error;
+      res.send(JSON.stringify(results));
   });
+});
+
+// router.post('/newmember', function(req, res, next) {
+//   res.locals.connection.query('insert into members(firstname,lastname,email,dob,gender,iscommittee,iscoach) values(''+req.body.firstname+'',''+req.body.lastname+'',''+req.body.email+'',''+req.body.dob+'',''+req.body.gender+'',''+req.body.iscommittee+'',''+req.body.iscoach+'')', 
+//    function (error, results, fields) {
+//       if(error) throw error;
+//       res.send(JSON.stringify(results));
+//   });
+// });
 
   module.exports = router;
 

@@ -1,4 +1,4 @@
--- CREATE DATABASE teamassist;
+CREATE DATABASE teamassist;
 use teamassist;
 -- DROP TABLE records;
 -- DROP TABLE certs;
@@ -17,6 +17,7 @@ CREATE TABLE members (
     isactive BOOLEAN DEFAULT TRUE,
     PRIMARY KEY (id)
     );
+
     
 CREATE TABLE certs (
 	id INT NOT NULL auto_increment,
@@ -25,6 +26,7 @@ CREATE TABLE certs (
     authority VARCHAR(50),
     PRIMARY KEY (id)
     );
+
     
 CREATE TABLE records (
 	id INT NOT NULL auto_increment,
@@ -39,4 +41,3 @@ CREATE TABLE records (
 	FOREIGN KEY (cert_id) REFERENCES certs(id),
 	FOREIGN KEY (auth_id) REFERENCES members(id)
     );
-    

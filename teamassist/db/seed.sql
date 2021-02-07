@@ -1,13 +1,13 @@
 INSERT INTO certs (certname, recordtype, authority)
 VALUES  
-('clubfees', 'expiry', 'committee'),
-('aocrafees', 'expiry', 'committee'),
-('ybsc', 'expiry', 'committee'),
-('codeofconduct', 'expiry', 'committee'),
-('firstaid', 'expiry', 'committee'),
-('wwcc', 'expiry', 'committee'),
-('swim', 'expiry', 'coach'),
-('huli', 'expiry', 'coach');
+('club fees', 'expiry', 'committee'),
+('aocra fees', 'expiry', 'committee'),
+('YBSC Membership', 'expiry', 'committee'),
+('Code of Conduct', 'expiry', 'committee'),
+('First Aid Certificate', 'expiry', 'committee'),
+('Working With Children Check', 'expiry', 'committee'),
+('Swim Test', 'expiry', 'coach'),
+('Huli Test', 'expiry', 'coach');
     
 INSERT INTO members (firstname, lastname, email, dob, gender)
 VALUES  
@@ -44,6 +44,9 @@ VALUES
 ('Committee', 'Member', 'Committee@teamassist.com', '1986-7-19', 'M', TRUE, FALSE),
 ('Coach', 'Member', 'Coach@teamassist.com', '1988-8-20', 'F', FALSE, TRUE);
 
+INSERT INTO members (firstname, lastname, email, dob, gender, isactive)
+VALUES  
+('Inactive', 'Member', 'InactiveMember@teamassist.com', '1950-01-01', 'F', false);
 
 INSERT INTO records (member_id, cert_id, auth_id, expiry)
 VALUES
@@ -269,4 +272,8 @@ VALUES
 (29, 5, 28, '2021-05-05'),
 (29, 6, 28, '2021-05-05'),
 (29, 7, 29, '2021-06-01'),
-(29, 8, 29, '2021-06-01');
+(29, 8, 29, '2021-06-01'),
+(30, 2, 26, '2020-02-01'),
+(30, 3, 26, '2020-06-01'),
+(30, 4, 26, '2020-06-01'),
+(30, 5, 26, '2020-01-01');

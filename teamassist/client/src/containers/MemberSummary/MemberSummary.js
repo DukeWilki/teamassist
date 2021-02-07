@@ -1,12 +1,15 @@
 import React from "react";
 import "./MemberSummary.css";
 import MemberSummaryList from "./MemberSummaryList/MemberSummaryList";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
 import Test from "./../Test/Test";
 
+
 function MemberSummary() {
+  // const { id } = useParams();  
   return (
-    <div>
+    <div>    
+      {/* <h2>id: {id}</h2> */}
       <Router>
         <Switch>
       <Route exact path="/test" component={Test} />

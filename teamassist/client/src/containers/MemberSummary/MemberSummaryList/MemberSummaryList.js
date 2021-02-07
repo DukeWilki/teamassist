@@ -4,9 +4,15 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import ButtonAddRecord from "./../../../components/ButtonAddRecord/ButtonAddRecord";
 import ButtonEditMember from "./../../../components/ButtonEditMember/ButtonEditMember";
+// import {
+//   BrowserRouter as Router,
+//   Switch,
+//   Route,
+//   useParams
+// } from "react-router-dom";
 
 function MemberSummaryList() {
-
+  // const { id } = useParams();
 
   const [profiles, setRecords] = useState([]);
 
@@ -33,16 +39,18 @@ function MemberSummaryList() {
   return (
     <div className="menu-list">
       <h2>Member Profile</h2>  
+      {/* <h2>ID {id}</h2> */}
       <h3>~membername~</h3>  
+
       {profiles.map((record, i) => {
         console.log(record);
         return (
           // <ul key={i} >
-          <ul key={record.id} >
+          <p key={record.id} >
             {/* <button className="text-button" > {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</button> */}
             {/* <Link to="/test" > {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</Link> */}
             <Link to={"/updaterecord/" + record.id}> {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</Link>
-          </ul>          
+          </p>          
         )    
 
       })}

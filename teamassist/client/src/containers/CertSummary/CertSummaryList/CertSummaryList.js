@@ -37,9 +37,9 @@ function CertSummaryList() {
         console.log(record);
         return (
           // <ul key={i} >
-          <ul key={record.id} >
+          <p key={record.id} >
             <Link to={`/updaterecord/${record.id}`}> {record.firstname} {record.lastname} <br></br> {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</Link>
-          </ul>
+          </p>
         )
       })}
     </div>

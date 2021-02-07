@@ -26,11 +26,11 @@ function CertList() {
     <div className="menu-list">
       {certs.map((cert) => {
         return (
-          <ul key={cert.id}>
+          <p key={cert.id}>
             {/* <button className="text-button"> {cert.certname}</button> */}
             {/* <a href={"/certs/" + cert.certname}>{cert.certname}</a> */}
             <Link to={"/certs/" + cert.certname + cert.id}>{cert.certname}</Link>
-          </ul>
+          </p>
         )
       })}
     </div>

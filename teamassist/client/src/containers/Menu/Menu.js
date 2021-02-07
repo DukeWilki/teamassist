@@ -6,18 +6,15 @@ import { Link } from "react-router-dom";
 function Menu() {
   return (
     <div>
-      <ul>
+      <p>
           <Link to="/members" >Member Lookup</Link>
-        </ul>
-        <ul>
+        </p>
+        <p>
           <Link to="/certs" >Certificate Check</Link>
-        </ul>
-        <ul>
-          <Link to="/new"  >New Member</Link>
-        </ul>
-        <ul>
-          <Link to="/edit"  >Edit Member</Link>
-        </ul>
+        </p>
+        <p>
+          <Link to="/newmember" >New Member</Link>
+        </p>
     </div>
   );
 }

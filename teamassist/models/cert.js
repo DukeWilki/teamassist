@@ -3,8 +3,15 @@ module.exports = function (sequelize, DataTypes) {
     certname: DataTypes.STRING,
     recordtype: DataTypes.STRING,
     authority: DataTypes.STRING,
+  }, {
+    timestamps: false
   });
   return Cert;
 };
 
 
+// }, {
+//   timestamps: false
+// });
+// return Recomendation;
+// };
