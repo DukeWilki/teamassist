@@ -1,7 +1,7 @@
 INSERT INTO certs (certname, recordtype, authority)
 VALUES  
-('club fees', 'expiry', 'committee'),
-('aocra fees', 'expiry', 'committee'),
+('Club Fees', 'expiry', 'committee'),
+('AOCRA Fees', 'expiry', 'committee'),
 ('YBSC Membership', 'expiry', 'committee'),
 ('Code of Conduct', 'expiry', 'committee'),
 ('First Aid Certificate', 'expiry', 'committee'),
@@ -11,42 +11,42 @@ VALUES
     
 INSERT INTO members (firstname, lastname, email, dob, gender)
 VALUES  
-('Sabrina', 'Aguilar', 'SabrinaAguilar@teamassist.com', '1950-01-01', 'F'),
-('Alexia', 'Beasley', 'AlexiaBeasley@teamassist.com', '1952-02-02', 'F'),
-('Talia', 'Black', 'TaliaBlack@teamassist.com', '1954-03-03', 'F'),
-('Alina', 'Blaese', 'AlinaBlaese@teamassist.com', '1956-04-04', 'F'),
-('Shane', 'Christian', 'ShaneChristian@teamassist.com', '1958-05-05', 'M'),
-('Velma', 'Clayton', 'VelmaClayton@teamassist.com', '1960-06-06', 'F'),
-('Taylor', 'Day', 'TaylorDay@teamassist.com', '1962-07-07', 'F'),
-('Lauren', 'Finch', 'LaurenFinch@teamassist.com', '1964-08-08', 'F'),
-('Daisy', 'Fuentes', 'DaisyFuentes@teamassist.com', '1966-09-09', 'F'),
-('Rosie', 'Hudson', 'RosieHudson@teamassist.com', '1968-10-10', 'F'),
-('Troy', 'Hurst', 'TroyHurst@teamassist.com', '1970-11-11', 'M'),
-('Esme', 'Marshall', 'EsmeMarshall@teamassist.com', '1972-12-12', 'F'),
-('Leyla', 'Mcconnell', 'LeylaMcconnell@teamassist.com', '1974-01-13', 'F'),
-('Carla', 'Ortiz', 'CarlaOrtiz@teamassist.com', '1976-02-14', 'F'),
-('Angela', 'Welsh', 'AngelaWelsh@teamassist.com', '1978-03-15', 'F'),
-('Ebony', 'Davenport', 'EbonyDavenport@teamassist.com', '1980-04-16', 'F'),
-('Anika', 'Faulkner', 'AnikaFaulkner@teamassist.com', '1982-05-17', 'F'),
-('Bailey', 'Perez', 'BaileyPerez@teamassist.com', '1990-09-21', 'F'),
-('Euan', 'Mcclain', 'IeuanMcclain@teamassist.com', '1992-10-22', 'M'),
-('Jeremy', 'Dyer', 'JeremyDyer@teamassist.com', '1994-11-23', 'M'),
-('Kyron', "O'Gallagher", 'KyronOGallagher@teamassist.com', '1996-12-24', 'M'),
-('Liberty', 'Elliott', 'LibertyElliott@teamassist.com', '1998-01-25', 'F'),
-('Lucas', 'Bartlett', 'LucasBartlett@teamassist.com', '2000-02-26', 'M'),
-('Nicholas', 'Williams', 'NicholasWilliams@teamassist.com', '2002-03-27', 'M'),
-('Ross', 'Tanner', 'RossTanner@teamassist.com', '2004-04-28', 'M');
+('Sabrina', 'Aguilar', 'SabrinaAguilar@teamassist.com', '1950-01-01', 'Female'),
+('Alexia', 'Beasley', 'AlexiaBeasley@teamassist.com', '1952-02-02', 'Female'),
+('Talia', 'Black', 'TaliaBlack@teamassist.com', '1954-03-03', 'Female'),
+('Alina', 'Blaese', 'AlinaBlaese@teamassist.com', '1956-04-04', 'Female'),
+('Shane', 'Christian', 'ShaneChristian@teamassist.com', '1958-05-05', 'Male'),
+('Velma', 'Clayton', 'VelmaClayton@teamassist.com', '1960-06-06', 'Female'),
+('Taylor', 'Day', 'TaylorDay@teamassist.com', '1962-07-07', 'Female'),
+('Lauren', 'Finch', 'LaurenFinch@teamassist.com', '1964-08-08', 'Female'),
+('Daisy', 'Fuentes', 'DaisyFuentes@teamassist.com', '1966-09-09', 'Female'),
+('Rosie', 'Hudson', 'RosieHudson@teamassist.com', '1968-10-10', 'Female'),
+('Troy', 'Hurst', 'TroyHurst@teamassist.com', '1970-11-11', 'Male'),
+('Esme', 'Marshall', 'EsmeMarshall@teamassist.com', '1972-12-12', 'Female'),
+('Leyla', 'Mcconnell', 'LeylaMcconnell@teamassist.com', '1974-01-13', 'Female'),
+('Carla', 'Ortiz', 'CarlaOrtiz@teamassist.com', '1976-02-14', 'Female'),
+('Angela', 'Welsh', 'AngelaWelsh@teamassist.com', '1978-03-15', 'Female'),
+('Ebony', 'Davenport', 'EbonyDavenport@teamassist.com', '1980-04-16', 'Female'),
+('Anika', 'Faulkner', 'AnikaFaulkner@teamassist.com', '1982-05-17', 'Female'),
+('Bailey', 'Perez', 'BaileyPerez@teamassist.com', '1990-09-21', 'Female'),
+('Euan', 'Mcclain', 'IeuanMcclain@teamassist.com', '1992-10-22', 'Male'),
+('Jeremy', 'Dyer', 'JeremyDyer@teamassist.com', '1994-11-23', 'Male'),
+('Kyron', "O'Gallagher", 'KyronOGallagher@teamassist.com', '1996-12-24', 'Male'),
+('Liberty', 'Elliott', 'LibertyElliott@teamassist.com', '1998-01-25', 'Female'),
+('Lucas', 'Bartlett', 'LucasBartlett@teamassist.com', '2000-02-26', 'Male'),
+('Nicholas', 'Williams', 'NicholasWilliams@teamassist.com', '2002-03-27', 'Male'),
+('Ross', 'Tanner', 'RossTanner@teamassist.com', '2004-04-28', 'Male');
 
 INSERT INTO members (firstname, lastname, email, dob, gender, iscommittee, iscoach)
 VALUES  
-('Luke', 'Wilkinson', 'LukeWilkinson@teamassist.com', '1984-6-18', 'M', TRUE, TRUE),
-('q', 'q', 'q@q.q', '1984-6-18', 'M', TRUE, TRUE),
-('Committee', 'Member', 'Committee@teamassist.com', '1986-7-19', 'M', TRUE, FALSE),
-('Coach', 'Member', 'Coach@teamassist.com', '1988-8-20', 'F', FALSE, TRUE);
+('Luke', 'Wilkinson', 'LukeWilkinson@teamassist.com', '1984-6-18', 'Male', TRUE, TRUE),
+('q', 'q', 'q@q.q', '1984-6-18', 'Male', TRUE, TRUE),
+('Committee', 'Member', 'Committee@teamassist.com', '1986-7-19', 'Male', TRUE, FALSE),
+('Coach', 'Member', 'Coach@teamassist.com', '1988-8-20', 'Female', FALSE, TRUE);
 
 INSERT INTO members (firstname, lastname, email, dob, gender, isactive)
 VALUES  
-('Inactive', 'Member', 'InactiveMember@teamassist.com', '1950-01-01', 'F', false);
+('Inactive', 'Member', 'InactiveMember@teamassist.com', '1950-01-01', 'Female', false);
 
 INSERT INTO records (member_id, cert_id, auth_id, expiry)
 VALUES
@@ -273,6 +273,10 @@ VALUES
 (29, 6, 28, '2021-05-05'),
 (29, 7, 29, '2021-06-01'),
 (29, 8, 29, '2021-06-01'),
+(30, 2, 26, '2020-02-01'),
+(30, 3, 26, '2020-06-01'),
+(30, 4, 26, '2020-06-01'),
+(30, 5, 26, '2020-01-01'),
 (30, 2, 26, '2020-02-01'),
 (30, 3, 26, '2020-06-01'),
 (30, 4, 26, '2020-06-01'),

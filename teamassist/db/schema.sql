@@ -1,4 +1,5 @@
 CREATE DATABASE teamassist;
+DROP DATABASE teamassist;
 use teamassist;
 -- DROP TABLE records;
 -- DROP TABLE certs;
@@ -11,7 +12,7 @@ CREATE TABLE members (
     email VARCHAR(50),
     pass VARCHAR(50),
     dob DATE,
-    gender VARCHAR(1)  DEFAULT 'u',
+    gender VARCHAR(15)  DEFAULT 'Unknown',
     iscommittee BOOLEAN DEFAULT FALSE,
     iscoach BOOLEAN DEFAULT FALSE,
     isactive BOOLEAN DEFAULT TRUE,

@@ -14,7 +14,7 @@ import UpdateRecord from "./containers/UpdateRecord/UpdateRecord";
 import MemberSelection from "./containers/MemberSelection/MemberSelection";
 import CertSelection from "./containers/CertSelection/CertSelection";
 import EditMember from "./containers/EditMember/EditMember";
-import PostForm from "./components/PostForm";
+// import PostForm from "./components/PostForm";
 
 
 function App() {
@@ -28,9 +28,9 @@ function App() {
         <Route exact path="/" component={Menu} />                     {/* routing complete to all 4 options */}
         <Route exact path="/login" component={Login} />               {/*  */}
         <Route exact path="/members" component={MemberSelection} />   {/* routing complete member profile */}
-        <Route path="/members/:param" component={MemberSummary} />    {/* routing complete to edit record | buttons to be completed*/}
+        <Route path="/members/:id" component={MemberSummary} />    {/* routing complete to edit record | buttons to be completed*/}
         <Route exact path="/certs" component={CertSelection} />       {/* routing complete cert summary */}
-        <Route path="/certs/:param" component={CertSummary} />        {/* routes to Test.js */}
+        <Route path="/certs/:id" component={CertSummary} />        {/* routes to Test.js */}
         <Route path="/addrecord" component={AddRecord} />             {/* routing complete to edit record */}
         <Route path="/updaterecord/:id" component={UpdateRecord} />   {/* API READ to be done | Save/API UPDATE to be done */}
         <Route path="/newmember" component={NewMember} />             {/* Submit/API POST to be done */}

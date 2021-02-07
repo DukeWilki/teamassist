@@ -6,14 +6,14 @@ import Test from "./../Test/Test";
 
 
 function MemberSummary() {
-  // const { id } = useParams();  
+  const { id } = useParams();  
   return (
     <div>    
-      {/* <h2>id: {id}</h2> */}
+      <h2>id: {id}</h2>
       <Router>
         <Switch>
       <Route exact path="/test" component={Test} />
-      <MemberSummaryList />
+      <MemberSummaryList id={id} />
       <div className="control">
         <p>Select a record to update it</p>
       <button className="button is-primary">New Record</button>

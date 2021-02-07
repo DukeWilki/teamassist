@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "./CertList.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
 
-function CertList() {
+function CertDropdown() {
   const [certs, setCerts] = useState([]);
 
   function fetchCerts() {
@@ -15,17 +13,19 @@ function CertList() {
   }, []);
 
   // Render cert list
-  return (
-    <div className="menu-list">
+  return (  
+    <select
+      className="input"
+      // type="date"
+      name="certname"
+      value={certname}
+      onChange={(e) => setCertname(e.target.value)}
+    >
       {certs.map((cert) => {
-        return (
-          <p key={cert.id}>
-            <Link to={"/certs/" + cert.id}>{cert.certname}</Link>
-          </p>
-        );
+        return <option key={cert.id}> {cert.certname} </option>;
       })}
-    </div>
+    </select>
   );
 }
 
-export default CertList;
+export default CertDropdown;

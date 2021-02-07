@@ -24,22 +24,13 @@ function MemberList() {
   // Render member list
   return (
     <div className="menu-list">
-
-
       {members.map((member) => {
-
         return (
           <ul key={member.id} >
-
-            {/* <a href={"/members/" + member.id}>{member.firstname} {member.lastname}</a> */}
             <Link to={"/members/" + member.id}>{member.firstname} {member.lastname}</Link>
-
-            {/* <button className="text-button">{member.firstname} {member.lastname}</button> */}
-          </ul>
+            </ul>
         )
-
       })}
-
     </div>
   );
 }
