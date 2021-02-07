@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState, useEffect} from "react";
+import axios from "axios";
+
+
 
 function NewMember() {
-  // const [firstname, setFirstname] = useState([]);
+  const [firstname, setFirstname] = useState([]);
   // const [lastname, setLastname] = useState([]);
   // const [email, setEmail] = useState([]);
   // const [dob, setDob] = useState([]);
@@ -9,7 +12,7 @@ function NewMember() {
   // const [iscommittee, setIscommittee] = useState([]);
   // const [iscoach, setIscoach] = useState([]);
 
-  const [firstname, setFirstname] = "";
+  // const [firstname, setFirstname] = "";
   const [lastname, setLastname] = "";
   const [email, setEmail] = "";
   const [dob, setDob] = "";
