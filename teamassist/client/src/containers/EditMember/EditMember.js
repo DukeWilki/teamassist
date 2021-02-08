@@ -15,6 +15,15 @@ function EditMember(props) {
   const [iscommittee, setIscommittee] = useState([]);
   const [iscoach, setIscoach] = useState([]);
   const [isactive, setIsactive] = useState([]);
+console.log(gender);
+console.log(firstname);
+console.log(lastname);
+console.log(email);
+console.log(dob);
+console.log(gender);
+console.log(iscommittee);
+console.log(iscoach);
+console.log(isactive);
 
   function fetchMembers() {
     return axios
@@ -68,7 +77,7 @@ function EditMember(props) {
               name="firstname"
               value={firstname}
               placeholder={member.firstname}
-              // onChange={(e) => setFirstname(e.target.value)}
+              onChange={(e) => setFirstname(e.target.value)}
             ></input>
           </div>
 
@@ -79,7 +88,7 @@ function EditMember(props) {
               name="lastname"
               value={lastname}
               placeholder={member.lastname}
-              // onChange={(e) => setLastname(e.target.value)}
+              onChange={(e) => setLastname(e.target.value)}
             ></input>
           </div>
 
@@ -90,7 +99,7 @@ function EditMember(props) {
               name="email"
               value={email}
               placeholder={member.email}
-              // onChange={(e) => setLastname(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             ></input>
           </div>
 
@@ -103,7 +112,7 @@ function EditMember(props) {
               name="dob"
               value={dob}
               placeholder={member.dob}
-              // onChange={(e) => setDob(e.target.value)}
+              onChange={(e) => setDob(e.target.value)}
             ></input>
           </div>
         </div>
@@ -116,9 +125,10 @@ function EditMember(props) {
               // type="date"
               name="gender"
               value={gender}
-              placeholder={member.gender}
-              // onChange={(e) => setGender(e.target.value)}
+              selection={member.gender}
+              onChange={(e) => setGender(e.target.value)}
             >
+              <option selected hidden>{member.gender}</option>
               <option>Unknown</option>
               <option>Female</option>
               <option>Male</option>
@@ -133,7 +143,8 @@ function EditMember(props) {
             type="checkbox"
             name="iscommittee"
             value={iscommittee}
-            // onChange={(e) => setIscommittee(e.target.checked)}
+            checked={member.iscommittee}
+            onChange={(e) => setIscommittee(e.target.checked)}
           ></input>
           Committee {member.iscommittee}
         </label>
@@ -144,7 +155,8 @@ function EditMember(props) {
             type="checkbox"
             name="iscoach"
             value={iscoach}
-            // onChange={(e) => setIscoach(e.target.checked)}
+            checked={member.iscoach}
+            onChange={(e) => setIscoach(e.target.checked)}
           ></input>
           Coach {member.iscoach}
         </label>
@@ -155,7 +167,8 @@ function EditMember(props) {
             type="checkbox"
             name="isactive"
             value={isactive}
-            // onChange={(e) => setIsactive(e.target.checked)}
+            checked={member.isactive}
+            onChange={(e) => setIsactive(e.target.checked)}
           ></input>
           Active {member.isactive}
         </label>
