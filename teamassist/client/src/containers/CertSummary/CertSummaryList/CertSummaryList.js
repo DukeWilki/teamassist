@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./CertSummaryList.css";
 import axios from 'axios';
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 
 function CertSummaryList(props) {
-  const params = useParams();
+
   console.log(props.id);
 
   const [records, setRecords] = useState([]);
@@ -18,7 +18,7 @@ function CertSummaryList(props) {
 
   useEffect(() => {
     fetchRecords()
-      .then((records) => setRecords(records) );
+      .then((response) => setRecords(response) );
   }, []);
 
   function parseDate(expiry) {

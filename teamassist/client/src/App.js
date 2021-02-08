@@ -35,7 +35,7 @@ function App() {
         <Route path="/addrecord/:id" component={AddRecord} />             {/* routing complete to edit record */}
         <Route path="/updaterecord/:id" component={UpdateRecord} />   {/* API READ to be done | Save/API UPDATE to be done */}
         <Route path="/newmember" component={NewMember} />             {/* Submit/API POST to be done */}
-        <Route path="/editmember" component={EditMember} />           {/*  */}
+        <Route path="/editmember/:id" component={EditMember} />           {/*  */}
         <Route path="/confirmation" component={Confirmation} />       {/* buttons to be completed */}
         <Route component={Error} /> 
         </Switch>

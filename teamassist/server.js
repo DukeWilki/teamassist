@@ -17,7 +17,7 @@ const profilelistroutes = require("./routes/api_profilelist");
 const newroutes = require("./routes/api_new");
 const addrecordroutes = require("./routes/api_addrecord");
 const updaterecordroutes = require("./routes/api_updaterecord");
-const recordroutes = require("./routes/api_record");
+const updatememberroutes = require("./routes/api_updatemember");
 
 // // RESET TABLES ON INITIAL LOAD
 // const db = require('./models/index');
@@ -77,6 +77,7 @@ app.use('/api',  profilelistroutes);
 app.use('/api',  newroutes);
 app.use('/api',  addrecordroutes);
 app.use('/api',  updaterecordroutes);
+app.use('/api',  updatememberroutes);
 
 // Start the API server
 app.listen(PORT, () =>
