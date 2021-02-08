@@ -14,7 +14,7 @@ function ButtonAddRecord() {
       {/* <a href="#" className="button-text" onClick={handleClick}>
         Add Record
       </a> */}
-      <Link className="button-text" to={"/addrecord"}>Add Record</Link>
+      <Link className="button-text" to={"/addrecord/${member.id}"}>Add Record</Link>
     </div>
   );
 }

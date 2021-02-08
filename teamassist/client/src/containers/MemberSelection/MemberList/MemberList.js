@@ -4,32 +4,25 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 
 function MemberList() {
-
-
   const [members, setMembers] = useState([]);
 
   function fetchMembers(){
-    return axios.get('/api/members')
-      .then((response) => response.data)
+    return axios.get('/api/members').then((response) => response.data)
   }
 
   useEffect(() => {
-    fetchMembers()
-      .then((members) => setMembers(members) );
-
-
+    fetchMembers().then((members) => setMembers(members) );
   }, []);
-
 
   // Render member list
   return (
     <div className="menu-list">
       {members.map((member) => {
         return (
-          <ul key={member.id} >
+          <p key={member.id} >
             <Link to={"/members/" + member.id}>{member.firstname} {member.lastname}</Link>
-            </ul>
-        )
+            </p>
+        );
       })}
     </div>
   );

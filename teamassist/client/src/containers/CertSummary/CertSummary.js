@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-
 import Test from "./../Test/Test";
 
 function CertSummary() {
-  const { id } = useParams();  
+  const { id } = useParams();
   return (
     <div>
       <h2>id: {id}</h2>

@@ -6,7 +6,7 @@ import ButtonAddRecord from "./../../../components/ButtonAddRecord/ButtonAddReco
 import ButtonEditMember from "./../../../components/ButtonEditMember/ButtonEditMember";
 
 function MemberSummaryList(props) {
-  const params = useParams();
+  const { id } = useParams();  
   console.log(props.id);
 
   const [profiles, setRecords] = useState([]);
@@ -26,22 +26,26 @@ function MemberSummaryList(props) {
     return (date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
   };
 
-  // Render cert list
+  // Render member profile list
   return (
     <div className="menu-list">
       <h2>Member Profile</h2>  
+      <h2>props.id on SummaryList: {props.id} </h2>
       <h3>~membername~</h3>  
 
       {profiles.map((record, i) => {
         console.log(record);
         return (
           <p key={record.id} >
-            <Link to={"/updaterecord/" + record.id}> {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</Link>
+            <Link to={"/updaterecord/" + record.id}> {record.certname} {record.member_id} <br></br> Expiry: {parseDate(record.expiry)}</Link>
           </p>          
         )    
-
       })}
-      < ButtonAddRecord />< ButtonEditMember />
+          <div className="control">
+          <Link  to={`/addrecord/${props.id}`}>Add Record</Link>
+    </div>
+      {/* < ButtonAddRecord /> */}
+      < ButtonEditMember />
     </div>
   );
 }

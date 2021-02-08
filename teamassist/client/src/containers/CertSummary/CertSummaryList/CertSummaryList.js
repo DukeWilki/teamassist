@@ -3,6 +3,8 @@ import "./CertSummaryList.css";
 import axios from 'axios';
 import { Link, useParams } from "react-router-dom";
 
+
+
 function CertSummaryList(props) {
   const params = useParams();
   console.log(props.id);
@@ -24,9 +26,7 @@ function CertSummaryList(props) {
     return (date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
   };
 
-  // Render cert list
-
-
+  // Render cert summary list
   return (
     <div className="menu-list">
       <h2>Certificatation Check</h2>  
