@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, useParams} from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 function UpdateRecord(props) {
   const { id } = useParams();
@@ -44,10 +44,7 @@ function UpdateRecord(props) {
       });
   }
 
-  
-
   // Render record
-
   console.log({ id });
   return (
     <div>
@@ -58,8 +55,7 @@ function UpdateRecord(props) {
         return (
           <p key={record.id}>
             <h4>
-              {" "}
-              {record.firstname} {record.lastname}{" "}
+              {record.firstname} {record.lastname}
             </h4>
             <h4> {record.certname} </h4>
             <h4> Current Expiry: {parseDate(record.expiry)}</h4>
@@ -88,6 +84,10 @@ function UpdateRecord(props) {
           </div>
         </div>
       </form>
+      {records.map((record, i) => {
+        console.log(record);
+        return <Link to="/members/">Back to Member Lookup</Link>;
+      })}
     </div>
   );
 }

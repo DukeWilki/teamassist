@@ -47,6 +47,7 @@ db.Cert.hasMany(db.Record, { foreignKey: 'cert_id' })
 db.Record.belongsTo(db.Cert, { foreignKey: 'cert_id' })
 
 
+sequelize.sync()
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

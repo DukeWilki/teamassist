@@ -6,25 +6,12 @@ function NewRecord(props) {
   const { id } = useParams();
   console.log("propsID: " + props.id);
   console.log("{ ID }: " + id);
-  // const [memberid, setMemberid] = useState([]);
-  const [member_id, setMember_id] = useState([]);
   const [cert_id, setCert_id] = useState([]);
   const [expiry, setExpiry] = useState([]);
-  console.log(member_id);
   console.log(cert_id)
   console.log(expiry);
 
-  // // MEMBERS - hack only
-  // const [members, setMembers] = useState([]);
-  // function fetchCerts() {
-  //   return axios.get("/api/members").then((response) => response.data);
-  // }
-  // useEffect(() => {
-  //   fetchCerts().then((members) => setMembers(members));
-  // }, []);
-
-
-  // CERTS
+  // LOOK UP CERTS
   const [certs, setCerts] = useState([]);
   function fetchCerts() {
     return axios.get("/api/certs").then((response) => response.data);
@@ -33,12 +20,15 @@ function NewRecord(props) {
     fetchCerts().then((certs) => setCerts(certs));
   }, []);
 
+
+  // FUNCTION TO INVOKE API ROUTE AND PUT MYSQL
   function submitHandler(e) {
     e.preventDefault();
     console.log([]);
     axios
       .post("/api/addrecord", {
-        member_id: member_id,
+        // member_id: member_id,
+        member_id: id,
         cert_id: cert_id,
         expiry: expiry,
       })
@@ -55,24 +45,7 @@ function NewRecord(props) {
     <div className="new-member-form">
       <form onSubmit={submitHandler}>
         <h2>Add New Record</h2>
-        {/* <CertDropdown /> */}
         <h3>~membername~</h3>
-
-         {/* <label className="label">Member</label>
-        <div className="control">
-          <div className="select">
-            <select
-              className="input"
-              name="membername"
-              value={member_id}
-              onChange={(e) => setMember_id(e.target.value)}
-            >
-              {members.map((member) => {
-                return <option key={member.id} value={member.id}> {member.firstname} {member.lastname} </option>;
-              })}
-            </select>
-          </div>
-        </div> */}
 
         <label className="label">Certificate</label>
         <div className="control">

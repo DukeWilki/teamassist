@@ -1,6 +1,5 @@
 import React from "react";
-import ButtonAddRecord from "./../../../components/ButtonAddRecord/ButtonAddRecord";
-import ButtonEditMember from "./../../../components/ButtonEditMember/ButtonEditMember";
+
 
 
 function Confirmation() {
@@ -8,8 +7,6 @@ function Confirmation() {
   return (
     <div>
         Success!
-        < ButtonAddRecord />
-        < ButtonEditMember />   
   </div>
   );
 }

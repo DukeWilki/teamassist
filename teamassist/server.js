@@ -3,6 +3,8 @@ const session = require("express-session");
 // const bodyParser = require("body-parser"); // form data   // multer
 // const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
+dotenv.config({ path: ".env" });
+
 const passport = require("passport");
 const connectDb = require("./config/database");
 // const MongoStore = require("connect-mongo")(session);
@@ -22,7 +24,7 @@ const recordroutes = require("./routes/api_record");
 // db.sequelize.sync({force: true});
 
 
-dotenv.config({ path: ".env" });
+
 const app = express();
 connectDb();
 // Configure body parsing for AJAX requests
