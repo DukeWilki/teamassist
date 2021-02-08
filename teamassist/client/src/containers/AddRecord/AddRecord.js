@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import Header from "../../components/Header/Header";
-// import Footer from "../../components/Footer/Footer";
 import axios from "axios";
 // import CertDropdown from "../../components/CertDropdown/CertDropdown";
 

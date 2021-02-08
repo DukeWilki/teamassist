@@ -7,9 +7,11 @@ import Test from "./../Test/Test";
 
 function MemberSummary() {
   const { id } = useParams();  
+  const { firstname } = useParams();
   return (
     <div>    
-      <h2>id: {id}</h2>
+      <h2>id: {id} </h2>
+      <h2>name: {firstname}</h2>
       <Router>
         <Switch>
       <Route exact path="/test" component={Test} />
