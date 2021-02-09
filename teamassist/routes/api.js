@@ -14,11 +14,11 @@ router.all("*", function (req, res, next) {
   next();
 });
 
-router.get("/api/test", (req, res) => {
-    console.log("it works!");
-    res.send("it works!")
+// router.get("/api/test", (req, res) => {
+//     console.log("it works!");
+//     res.send("it works!")
 
-})
+// })
 
 router.post("/login", (req, res) => {
   res.json({
