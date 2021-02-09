@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./MemberSummaryList.css";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 function MemberSummaryList(props) {
-  const { id } = useParams();
   console.log(props.id);
 
   const [profiles, setRecords] = useState([]);

@@ -1,7 +1,7 @@
 import React from "react";
 import MemberSummaryList from "./MemberSummaryList/MemberSummaryList";
 // import AddRecord from "./MemberSummaryList/AddRecord/AddRecord";
-import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, useParams } from "react-router-dom";
 
 
 function MemberSummary() {

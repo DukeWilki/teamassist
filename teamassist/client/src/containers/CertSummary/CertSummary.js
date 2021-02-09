@@ -1,6 +1,6 @@
 import React from "react";
 import CertSummaryList from "./CertSummaryList/CertSummaryList";
-import { BrowserRouter as Router, Route, Switch, useParams } from "react-router-dom";
+import { BrowserRouter as Router, Switch, useParams } from "react-router-dom";
 
 
 function CertSummary() {
