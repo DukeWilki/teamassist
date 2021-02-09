@@ -51,7 +51,7 @@ function NewRecord(props) {
         <div className="control">
           <div className="select">
             <select
-              className="input"
+              className="input input-box"
               name="certname"
               value={cert_id}
               onChange={(e) => setCert_id(e.target.value)}
@@ -67,7 +67,7 @@ function NewRecord(props) {
           <label className="label">Expiry Date</label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box"
               type="date"
               name="expiry"
               value={expiry}
@@ -77,7 +77,7 @@ function NewRecord(props) {
         </div>
 
         <div className="control">
-          <button type="submit" className="button is-primary">
+          <button type="submit" className="button is-primary button-text">
             Submit
           </button>
         </div>

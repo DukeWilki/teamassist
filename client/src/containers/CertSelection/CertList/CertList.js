@@ -19,7 +19,7 @@ function CertList() {
     <div className="menu-list">
       {certs.map((cert) => {
         return (
-          <p key={cert.id} certname={cert.certname}>
+          <p className="menu-text" key={cert.id} certname={cert.certname}>
             <Link to={"/certs/" + cert.id }>{cert.certname}</Link>
           </p>
         );

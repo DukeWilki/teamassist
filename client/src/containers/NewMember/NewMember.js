@@ -43,14 +43,14 @@ function NewMember() {
 
   // Render New Member form
   return (
-    <div className="new-member-form">
+    <div className="new-member-form gen-text">
       <form onSubmit={submitHandler}>
         {/* <Header /> */}
         <div className="field">
           <label className="label">First Name</label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box gen-text"
               type="text"
               name="firstname"
               value={firstname}
@@ -65,7 +65,7 @@ function NewMember() {
           <label className="label">Last Name</label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box gen-text"
               type="text"
               name="lastname"
               value={lastname}
@@ -79,7 +79,7 @@ function NewMember() {
           <label className="label">Email</label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box gen-text"
               type="email"
               name="email"
               value={email}
@@ -93,7 +93,7 @@ function NewMember() {
           <label className="label">Date of Birth</label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box gen-text"
               type="date"
               name="dob"
               value={dob}
@@ -106,7 +106,7 @@ function NewMember() {
         <div className="control">
           <div className="select">
             <select
-              className="input"
+              className="input input-box gen-text"
               // type="date"
               name="gender"
               value={gender}
@@ -142,7 +142,7 @@ function NewMember() {
         </label>
 
         <div className="control">
-          <button type="submit" className="button is-primary">
+          <button type="submit" className="button is-primary button-text">
             Submit
           </button>
         </div>

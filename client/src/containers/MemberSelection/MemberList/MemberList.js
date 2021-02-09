@@ -19,7 +19,7 @@ function MemberList() {
     <div className="menu-list">
       {members.map((member) => {
         return (
-          <p key={member.id}>
+          <p className="menu-text" key={member.id}>
             <Link to={"/members/" + member.id}>
               {member.firstname} {member.lastname}
             </Link>

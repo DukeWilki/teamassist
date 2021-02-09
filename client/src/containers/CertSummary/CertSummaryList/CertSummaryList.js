@@ -36,8 +36,12 @@ function CertSummaryList(props) {
         console.log(record);
         return (
           <p key={record.id} >
-            <Link to={`/#/updaterecord/${record.id}`}> {record.firstname} {record.lastname} <br></br> {record.certname} <br></br> Expiry: {parseDate(record.expiry)}</Link>
-          </p>
+            <Link to={`/#/updaterecord/${record.id}`}> 
+            <span className="menu-text">{record.firstname} {record.lastname} </span><br></br> 
+            {/* <span className="gen-text">{record.certname}</span> <br></br>  */}
+            <span className="gen-text">Expiry: {parseDate(record.expiry)}</span></Link>
+                      </p>
+          
         )
       })}
     </div>

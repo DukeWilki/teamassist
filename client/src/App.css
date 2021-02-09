@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
 
 .App {
@@ -45,4 +46,50 @@
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
   border-radius: 25px;
+  margin-left: 10px;
+  margin-top: 15px;
 }
+
+.button-div {
+  margin-top: 10px;
+}
+
+.button-text:disabled,
+.button-text[disabled]{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.input-box {
+  width: 160px;
+
+}
+
+.gen-text{
+  font-family: 'Montserrat', sans-serif;
+  font-size: small;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  }
+
+  .menu-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: medium;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    }
+
+    .title-text{
+      font-family: 'Montserrat', sans-serif;
+      font-size: large;
+      margin-top: 10px;
+      margin-bottom: 15px;
+      }
+
+      .tiny-text{
+        font-family: 'Montserrat', sans-serif;
+        font-size: x-small;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        }

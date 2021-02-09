@@ -13,6 +13,7 @@ function CertSummary() {
       <CertSummaryList id={id} />
       </Switch>
       </Router>
+      <p className="gen-text">Cert number #{id}</p>
     </div>
   );
 }

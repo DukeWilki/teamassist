@@ -181,21 +181,23 @@ function EditMember(props) {
         console.log(member);
         return (
           <p key={member.id}>
-            <h4>
+            <h4 className="gen-text">
               {member.firstname} {member.lastname}
             </h4>
-            <p>
-            {member.email}  {parseDate(member.dob)} {member.gender} 
+            <p className="gen-text">
+            {member.email} </p>
+            <p className="gen-text"> {parseDate(member.dob)} {member.gender} 
             </p>
-            <p>
-              Committee member: {member.iscommittee} | Coach: {member.iscoach}
+            <p className="gen-text">
+              Committee member: {member.iscommittee} </p>
+            <p className="gen-text">Coach: {member.iscoach}
             </p>
-            <p>Member active: {member.isactive}</p>
+            <p className="gen-text">Member active: {member.isactive}</p>
 
             <form onSubmit={submitFirstnameHandler}>
               <div className="control">
                 <input
-                  className="input"
+                  className="input input-box"
                   type="text"
                   name="firstname"
                   value={firstname}
@@ -215,7 +217,7 @@ function EditMember(props) {
             <form onSubmit={submitLastnameHandler}>
               <div className="control">
                 <input
-                  className="input"
+                  className="input input-box"
                   type="text"
                   name="lastname"
                   value={lastname}
@@ -235,7 +237,7 @@ function EditMember(props) {
             <form onSubmit={submitEmailHandler}>
               <div className="control">
                 <input
-                  className="input"
+                  className="input input-box"
                   type="email"
                   name="email"
                   value={email}
@@ -257,7 +259,7 @@ function EditMember(props) {
                 {/* <label className="label">Current DOB: {member.dob}</label> */}
                 <div className="control">
                   <input
-                    className="input"
+                    className="input input-box"
                     type="date"
                     name="dob"
                     value={dob}
@@ -281,7 +283,7 @@ function EditMember(props) {
               <div className="control">
                 <div className="select">
                   <select
-                    className="input"
+                    className="input input-box"
                     // type="date"
                     name="gender"
                     value={gender}
@@ -317,7 +319,7 @@ function EditMember(props) {
                   defaultChecked={member.iscommittee}
                   onChange={(e) => setIscommittee(e.target.checked)}
                 ></input>
-                Committee Member
+                Committee
               </label>
               <button
                 type="submit"
@@ -327,7 +329,7 @@ function EditMember(props) {
                 Update
               </button>
             </form>
-            <br></br>
+            {/* <br></br> */}
             <form onSubmit={submitIscoachHandler}>
               <label className="checkbox">
                 <input
@@ -348,7 +350,7 @@ function EditMember(props) {
                 Update
               </button>
             </form>
-            <br></br>
+            {/* <br></br> */}
             <form onSubmit={submitIsactiveHandler}>
               <label className="checkbox">
                 <input

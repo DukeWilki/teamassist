@@ -48,17 +48,15 @@ function UpdateRecord(props) {
   console.log({ id });
   return (
     <div>
-      <h2>Record number #{id}</h2>
-
       {records.map((record, i) => {
         console.log(record);
         return (
           <p key={record.id}>
-            <h4>
+            <h4 className="title-text">
               {record.firstname} {record.lastname}
             </h4>
-            <h4> {record.certname} </h4>
-            <h4> Current Expiry: {parseDate(record.expiry)}</h4>
+            <h4 className="gen-text"> {record.certname} </h4>
+            <h4 className="gen-text"> Current Expiry: {parseDate(record.expiry)}</h4>
           </p>
         );
       })}
@@ -66,11 +64,11 @@ function UpdateRecord(props) {
       <form onSubmit={submitHandler}>
         <div className="field">
           <label className="label">
-            <h5>Select new expiry:</h5>
+            <p className="gen-text">Select new expiry:</p>
           </label>
           <div className="control">
             <input
-              className="input"
+              className="input input-box"
               type="date"
               name="expiry"
               value={expiry}
@@ -78,9 +76,10 @@ function UpdateRecord(props) {
             ></input>
           </div>
           <div className="control">
-            <button type="submit" className="button is-primary">
+            <button type="submit" className="button is-primary button-text">
               Extend
             </button>
+            <p className="gen-text">Record number #{id}</p>
           </div>
         </div>
       </form>

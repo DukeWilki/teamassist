@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Menu() {
   return (
-    <div>
+    <div className="menu-text">
       <p>
         <Link to="/members">Member Lookup</Link>
       </p>

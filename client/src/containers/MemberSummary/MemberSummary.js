@@ -12,11 +12,11 @@ function MemberSummary() {
       <Router>
         <Switch>
       <MemberSummaryList id={id} />
-      <button className="button is-primary">New Record</button>
-      <button className="button is-primary">Edit Member</button>
 
+      
       </Switch>
       </Router>
+      <p className="gen-text">Member number #{id}</p>
     </div>
   );
 }

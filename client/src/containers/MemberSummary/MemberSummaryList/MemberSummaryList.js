@@ -38,19 +38,20 @@ function MemberSummaryList(props) {
         return (
           <p key={record.id}>
             <Link to={"/#/updaterecord/" + record.id}>
-              {" "}
-              {record.certname} {record.member_id} <br></br> Expiry:{" "}
-              {parseDate(record.expiry)}
+              <span className="menu-text">{record.certname} {record.member_id}</span>
+              <br></br>
+              <span className="gen-text">Expiry:{parseDate(record.expiry)}</span>
             </Link>
           </p>
         );
       })}
       
-      <div className="control">
+      <div className="control button-div">
         <Link className="button-text" to={`/#/addrecord/${props.id}`}>Add Record</Link>
       </div>
+      <div className="control button-div">
       <Link className="button-text" to={`/#/editmember/${props.id}`}>Edit Member</Link>
-    </div>
+    </div></div>
   );
 }
 
