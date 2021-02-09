@@ -56,6 +56,7 @@ function NewRecord(props) {
               value={cert_id}
               onChange={(e) => setCert_id(e.target.value)}
             >
+              <option value="" selected disabled>Please select</option>
               {certs.map((cert) => {
                 return <option key={cert.id} value={cert.id}> {cert.certname} </option>;
               })}

@@ -287,12 +287,13 @@ function EditMember(props) {
                     // type="date"
                     name="gender"
                     value={gender}
-                    selection={member.gender}
+                    // selection={member.gender}
                     onChange={(e) => setGender(e.target.value)}
                   >
                     <option selected hidden>
                       {member.gender}
                     </option>
+                    <option value="" selected disabled>{member.gender}</option>
                     <option>Unknown</option>
                     <option>Female</option>
                     <option>Male</option>

@@ -111,7 +111,7 @@ function NewMember() {
               name="gender"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-            >
+            ><option value="" selected disabled>Please select</option>
               <option>Unknown</option>
               <option>Female</option>
               <option>Male</option>
