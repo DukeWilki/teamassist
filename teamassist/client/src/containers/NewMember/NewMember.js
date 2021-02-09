@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
+
 function NewMember() {
   const [firstname, setFirstname] = useState([]);
   const [lastname, setLastname] = useState([]);
@@ -33,6 +34,7 @@ function NewMember() {
       })
       .then((response) => {
         console.log(response);
+        
       })
       .catch((error) => {
         console.log(error);

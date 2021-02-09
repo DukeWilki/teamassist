@@ -7,7 +7,8 @@ const router = express.Router();
     console.log(req.body.member_id);
     console.log(req.body.cert_id);
     console.log(req.body.expiry);
-    const addRecord = await db.sequelize.query('insert into records(cert_id,expiry,member_id) values('+req.body.cert_id+',"'+req.body.expiry+'",'+req.body.member_id+');');
+    // const newMember = await 
+    db.sequelize.query('insert into records(cert_id,expiry,member_id) values('+req.body.cert_id+',"'+req.body.expiry+'",'+req.body.member_id+');');
     res.send(JSON.stringify(db.addRecord));   
   });
 
