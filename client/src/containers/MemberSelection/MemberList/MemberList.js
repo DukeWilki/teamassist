@@ -14,13 +14,18 @@ function MemberList() {
     fetchMembers().then((members) => setMembers(members));
   }, []);
 
+//   function refreshPage() {
+//     window.location.reload();
+// }
+
   // Render member list
   return (
     <div className="menu-list">
       {members.map((member) => {
         return (
           <p className="menu-text" key={member.id}>
-            <Link to={"/members/" + member.id}>
+            {/* <Link to={"/members/" + member.id}  onClick={refreshPage}> */}
+            <Link to={"/members/" + member.id} >
               {member.firstname} {member.lastname}
             </Link>
           </p>

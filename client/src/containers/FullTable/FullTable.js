@@ -3,17 +3,33 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 function RecordList() {
-  const [records, setMeRords] = useState([]);
+  const [records, setRecords] = useState([]);
 
   function fetchRecords() {
     return axios.get("/api/fulltable").then((response) => response.data);
   }
 
   useEffect(() => {
-    fetchRecords().then((records) => setMeRords(records));
+    fetchRecords().then((records) => setRecords(records));
   }, []);
 
+  // function parseBoolean(isactive) {
+
+  //   if (isactive === 1) {
+  //     return (
+  //       "True"
+  //     )
+      
+  //   }
+
+    // return Object.assign({}, isactive, {
+    //   isChecked: !!Number(isactive.isChecked), // OR
+    //   isChecked: Boolean(Number(isactive.isChecked))
+  //   });
+  // }
+
   // Render record list
+  // const isactive = this.state.isactive;
   return (
     <div>
         <h4>For best results, view table on a desktop or tablet</h4>
@@ -38,7 +54,12 @@ function RecordList() {
               <td>{record.email} </td>
               <td>{record.certname} </td>
               <td>{record.expiry} </td>
-              <td>{record.isactive} </td> 
+              <td>{record.isactive}</td>               
+              {/* <td>{parseBoolean(record.isactive)}</td>  */}
+
+
+
+
           </tr>
         );
       })}
