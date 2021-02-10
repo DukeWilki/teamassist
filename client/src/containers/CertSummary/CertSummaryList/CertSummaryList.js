@@ -29,9 +29,6 @@ function CertSummaryList(props) {
   // Render cert summary list
   return (
     <div className="menu-list">
-      <h2>Certificatation Check</h2>  
-      <h3>~cert_name~</h3>  
-
       {records.map((record, i) => {
         console.log(record);
         return (

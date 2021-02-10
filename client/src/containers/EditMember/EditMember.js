@@ -175,13 +175,12 @@ function EditMember(props) {
   console.log({ id });
   return (
     <div>
-      <h2>Member number #{id}</h2>
-
+            <h4 className="title-text">Update member details:</h4>
       {members.map((member, i) => {
         console.log(member);
         return (
           <p key={member.id}>
-            <h4 className="gen-text">
+            <h4 className="title-text">
               {member.firstname} {member.lastname}
             </h4>
             <p className="gen-text">
@@ -197,7 +196,7 @@ function EditMember(props) {
             <form onSubmit={submitFirstnameHandler}>
               <div className="control">
                 <input
-                  className="input input-box"
+              className="input input-box gen-text"
                   type="text"
                   name="firstname"
                   value={firstname}
@@ -206,7 +205,7 @@ function EditMember(props) {
                 ></input>
                 <button
                   type="submit"
-                  className="button is-primary button-text"
+                  className="button is-primary button-text update-text"
                   disabled={firstname.length < 1}
                 >
                   Update
@@ -217,7 +216,7 @@ function EditMember(props) {
             <form onSubmit={submitLastnameHandler}>
               <div className="control">
                 <input
-                  className="input input-box"
+              className="input input-box gen-text"
                   type="text"
                   name="lastname"
                   value={lastname}
@@ -226,7 +225,7 @@ function EditMember(props) {
                 ></input>
                 <button
                   type="submit"
-                  className="button is-primary button-text"
+                  className="button is-primary button-text update-text"
                   disabled={lastname.length < 1}
                 >
                   Update
@@ -237,7 +236,7 @@ function EditMember(props) {
             <form onSubmit={submitEmailHandler}>
               <div className="control">
                 <input
-                  className="input input-box"
+              className="input input-box gen-text"
                   type="email"
                   name="email"
                   value={email}
@@ -246,7 +245,7 @@ function EditMember(props) {
                 ></input>
                 <button
                   type="submit"
-                  className="button is-primary button-text"
+                  className="button is-primary button-text update-text"
                   disabled={email.length < 1}
                 >
                   Update
@@ -259,7 +258,7 @@ function EditMember(props) {
                 {/* <label className="label">Current DOB: {member.dob}</label> */}
                 <div className="control">
                   <input
-                    className="input input-box"
+              className="input input-box gen-text"
                     type="date"
                     name="dob"
                     value={dob}
@@ -268,7 +267,7 @@ function EditMember(props) {
                   ></input>
                   <button
                     type="submit"
-                    className="button is-primary button-text button-text"
+                    className="button is-primary button-text update-text"
                     disabled={dob.length < 1}
                   >
                     Update
@@ -283,7 +282,7 @@ function EditMember(props) {
               <div className="control">
                 <div className="select">
                   <select
-                    className="input input-box"
+              className="input input-box gen-text"
                     // type="date"
                     name="gender"
                     value={gender}
@@ -301,7 +300,7 @@ function EditMember(props) {
                   </select>
                   <button
                     type="submit"
-                    className="button is-primary button-text"
+                    className="button is-primary button-text update-text"
                     disabled={gender.length < 1}
                   >
                     Update
@@ -311,7 +310,7 @@ function EditMember(props) {
             </form>
 
             <form onSubmit={submitIscommitteeHandler}>
-              <label className="checkbox">
+            <label className="checkbox menu-text">
                 <input
                   className="input"
                   type="checkbox"
@@ -324,7 +323,7 @@ function EditMember(props) {
               </label>
               <button
                 type="submit"
-                className="button is-primary button-text"
+                className="button is-primary button-text update-text"
                 disabled={iscommittee.length < 1}
               >
                 Update
@@ -332,7 +331,7 @@ function EditMember(props) {
             </form>
             {/* <br></br> */}
             <form onSubmit={submitIscoachHandler}>
-              <label className="checkbox">
+            <label className="checkbox menu-text">
                 <input
                   className="input"
                   type="checkbox"
@@ -345,7 +344,7 @@ function EditMember(props) {
               </label>
               <button
                 type="submit"
-                className="button is-primary button-text"
+                className="button is-primary button-text update-text"
                 disabled={iscoach.length < 1}
               >
                 Update
@@ -353,7 +352,7 @@ function EditMember(props) {
             </form>
             {/* <br></br> */}
             <form onSubmit={submitIsactiveHandler}>
-              <label className="checkbox">
+              <label className="checkbox menu-text">
                 <input
                   className="input"
                   type="checkbox"
@@ -366,7 +365,7 @@ function EditMember(props) {
               </label>
               <button
                 type="submit"
-                className="button is-primary button-text"
+                className="button is-primary button-text update-text"
                 disabled={isactive.length < 1}
               >
                 Update
@@ -377,6 +376,7 @@ function EditMember(props) {
         );
         
       })}
+            <p className="gen-text">Member number #{id}</p>
     </div>
   );
 }

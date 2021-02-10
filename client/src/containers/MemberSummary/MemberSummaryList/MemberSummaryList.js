@@ -29,10 +29,6 @@ function MemberSummaryList(props) {
   // Render member profile list
   return (
     <div className="menu-list">
-      <h2>Member Profile</h2>
-      <h2>props.id on SummaryList: {props.id} </h2>
-      <h3>~membername~</h3>
-
       {profiles.map((record, i) => {
         console.log(record);
         return (

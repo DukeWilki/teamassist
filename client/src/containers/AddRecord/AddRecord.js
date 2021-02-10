@@ -4,7 +4,7 @@ import { useParams} from "react-router-dom";
 
 function NewRecord(props) {
   const { id } = useParams();
-  console.log("propsID: " + props.id);
+  // console.log("propsID: " + props.id);
   console.log("{ ID }: " + id);
   const [cert_id, setCert_id] = useState([]);
   const [expiry, setExpiry] = useState([]);
@@ -20,7 +20,21 @@ function NewRecord(props) {
     fetchCerts().then((certs) => setCerts(certs));
   }, []);
 
+  const [members, setMembers] = useState([]);
+  const [firstname, setFirstname] = useState([]);
+  const [lastname, setLastname] = useState([]);
+  console.log(firstname);
+  console.log(lastname);
 
+  function fetchMembers() {
+    return axios
+      .get("/api/displayname/" + id)
+      .then((response) => response.data);
+  }
+
+  useEffect(() => {
+    fetchMembers().then((members) => setMembers(members));
+  }, []);
   // FUNCTION TO INVOKE API ROUTE AND PUT MYSQL
   function submitHandler(e) {
     e.preventDefault();
@@ -43,20 +57,30 @@ function NewRecord(props) {
   // Render New record form
   return (
     <div className="new-member-form">
-      <form onSubmit={submitHandler}>
-        <h2>Add New Record</h2>
-        <h3>~membername~</h3>
 
-        <label className="label">Certificate</label>
+      <form className="gen-text" onSubmit={submitHandler}>
+
+      <h4 className="title-text">Add Certification to:</h4>
+        {members.map((member, i) => {
+        console.log(member);
+        return (
+          //
+          <h4 key={member.id} className="title-text">
+            {member.firstname} {member.lastname}
+          </h4>
+        );
+      })}
+
+        {/* <label className="label">Certificate</label> */}
         <div className="control">
           <div className="select">
             <select
-              className="input input-box"
+              className="input input-box gen-text"
               name="certname"
               value={cert_id}
               onChange={(e) => setCert_id(e.target.value)}
             >
-              <option value="" selected disabled>Please select</option>
+              <option value="" selected disabled>Select Certificate</option>
               {certs.map((cert) => {
                 return <option key={cert.id} value={cert.id}> {cert.certname} </option>;
               })}
@@ -65,10 +89,10 @@ function NewRecord(props) {
         </div>
 
         <div className="field">
-          <label className="label">Expiry Date</label>
+          <p className="gen-text">Select new expiry:</p>
           <div className="control">
             <input
-              className="input input-box"
+              className="input input-box gen-text"
               type="date"
               name="expiry"
               value={expiry}

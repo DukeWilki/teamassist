@@ -15,6 +15,7 @@ import UpdateRecord from "./containers/UpdateRecord/UpdateRecord";
 import MemberSelection from "./containers/MemberSelection/MemberSelection";
 import CertSelection from "./containers/CertSelection/CertSelection";
 import EditMember from "./containers/EditMember/EditMember";
+import FullTable from "./containers/FullTable/FullTable";
 // import PostForm from "./components/PostForm";
 
 
@@ -22,9 +23,10 @@ function App() {
   return (
     <div className="App">
       <div className="container-section">
+      <Router>
       <Header />
       {/* <PostForm /> */}
-        <Router>
+
         <Switch>
         <Route exact path="/" component={Menu} />                     {/* routing complete to all 4 options */}
         <Route exact path="/login" component={Login} />               {/*  */}
@@ -37,10 +39,12 @@ function App() {
         <Route path="/newmember" component={NewMember} />             {/* Submit/API POST to be done */}
         <Route path="/editmember/:id" component={EditMember} />           {/*  */}
         <Route path="/confirmation" component={Confirmation} />       {/* buttons to be completed */}
+        <Route path="/fulltable" component={FullTable} />
         <Route component={Error} /> 
         </Switch>
-      </Router>
+
         <Footer />
+        </Router>
       </div>
       {/* <CertSummary /> */}
       {/* <NewMember /> */} 

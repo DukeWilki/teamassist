@@ -13,6 +13,9 @@ function Menu() {
       <p>
         <Link to="/newmember">New Member</Link>
       </p>
+      <p>
+        <Link to="/fulltable">Full Table</Link>
+      </p>
     </div>
   );
 }

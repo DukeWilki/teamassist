@@ -48,6 +48,7 @@ function UpdateRecord(props) {
   console.log({ id });
   return (
     <div>
+            <h4 className="title-text">Extend Certification:</h4>
       {records.map((record, i) => {
         console.log(record);
         return (
@@ -64,11 +65,11 @@ function UpdateRecord(props) {
       <form onSubmit={submitHandler}>
         <div className="field">
           <label className="label">
-            <p className="gen-text">Select new expiry:</p>
+            <p className="gen-text"><strong>Select new expiry:</strong></p>
           </label>
           <div className="control">
             <input
-              className="input input-box"
+              className="input input-box gen-text"
               type="date"
               name="expiry"
               value={expiry}
