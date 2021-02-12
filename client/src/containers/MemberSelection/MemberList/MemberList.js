@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MemberList.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 function MemberList() {
   const [members, setMembers] = useState([]);
@@ -24,11 +24,10 @@ function MemberList() {
       {members.map((member) => {
         return (
           <p className="menu-text" key={member.id}>
-            {/* <Link to={"/members/" + member.id}  onClick={refreshPage}> */}
             <Link to={"/members/" + member.id} >
               {member.firstname} {member.lastname}
             </Link>
-          </p>
+            </p>
         );
       })}
     </div>

@@ -6,10 +6,11 @@ const dotenv = require("dotenv");
 dotenv.config({ path: ".env" });
 
 const passport = require("passport");
+const isAuthenticated = require("./config/isAuthenticated");
 const connectDb = require("./config/database");
 // const MongoStore = require("connect-mongo")(session);
 const routes = require("./routes/api");
-// const loginroutes = require("./routes/api_login");
+const loginroutes = require("./routes/api_login");
 const certlistroutes = require("./routes/api_certlist");
 const memberlistroutes = require("./routes/api_memberlist");
 const recordlistroutes = require("./routes/api_recordlist");
@@ -20,6 +21,7 @@ const updaterecordroutes = require("./routes/api_updaterecord");
 const updatememberroutes = require("./routes/api_updatemember");
 const displaynameroutes = require("./routes/api_displayname");
 const fulltableroutes = require("./routes/api_fulltable");
+const signuproutes = require("./routes/api_signup");
 
 // // RESET TABLES ON INITIAL LOAD
 // const db = require('./models/index');
@@ -68,12 +70,19 @@ app.all("*", function (req, res, next) {
   });
 
 
+  app.get("/", isAuthenticated, function(req, res) {
+    res.sendFile(path.join(__dirname, "./client/src/menu.js"));
+  });
+
+
+
 app.use(passport.initialize());
 app.use(passport.session());
 // Add routes, both API and view
-// app.use("/api", passportConfig.authenticate('local'));
+// app.use("/api",  passport Config.authenticate('local'));
+// app.use("/api",  passport);
 app.use('/api',  routes);
-// app.use('/api',  loginroutes);
+app.use('/api',  loginroutes);
 app.use('/api',  certlistroutes);
 app.use('/api',  memberlistroutes);
 app.use('/api',  recordlistroutes);
@@ -84,6 +93,7 @@ app.use('/api',  updaterecordroutes);
 app.use('/api',  updatememberroutes);
 app.use('/api',  displaynameroutes);
 app.use('/api',  fulltableroutes);
+app.use('/api',  signuproutes);
 
 // Start the API server
 app.listen(PORT, () =>

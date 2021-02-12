@@ -4,17 +4,22 @@ const express = require("express");
 const { Router } = require("express");
 const router = express.Router();
 
-router.post("/api/login", passport.authenticate("local"), (req, res) => {
+
+router.post("/login", passport.authenticate("local"), (req, res) => {
+  // router.post("/login", (req, res) => {
+    console.log('req body', req.body)
     console.log("api")
+    console.log("BOOM");
+
   res.json({
     email: req.body.email,
-    password: req.body.password,
-    // id: req.body.id,
+    pass: req.body.pass,
+    id: req.body.id,
   });
 });
 
 router.get("/logout", (req, res) => {
-  req.logout();
+  // req.logout();
   res.redirect("/login");
 });
 

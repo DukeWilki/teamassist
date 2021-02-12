@@ -6,6 +6,7 @@ function UpdateRecord(props) {
   const { id } = useParams();
   console.log(id);
 
+
   const [records, setRecords] = useState([]);
 
   function fetchRecords() {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./MemberSummaryList.css";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 
 function MemberSummaryList(props) {
@@ -26,6 +26,10 @@ function MemberSummaryList(props) {
     );
   }
 
+//     function refreshPage() {
+//     window.location.reload();
+// }
+
   // Render member profile list
   return (
     <div className="menu-list">
@@ -33,11 +37,13 @@ function MemberSummaryList(props) {
         console.log(record);
         return (
           <p key={record.id}>
-            <Link to={"/#/updaterecord/" + record.id}>
+            <Router>
+            <Link to={"/#/updaterecord/" + record.id} >
               <span className="menu-text">{record.certname} {record.member_id}</span>
               <br></br>
               <span className="gen-text">Expiry:{parseDate(record.expiry)}</span>
             </Link>
+            </Router>
           </p>
         );
       })}

@@ -16,19 +16,21 @@ function Login() {
         e.preventDefault()
         // validation
         console.log(formState);
+        console.log("right before axios");
         axios({
           method: 'post',
           url: "http://localhost:3001/api/login",
           data: {
-            username: formState.email,
+            email: formState.email,
             password: formState.password
           },headers: {
             "Access-Control-Allow-Origin": true
           }
-        });
+        })
+        console.log("right after axios");;
 
 
-        // axios("http://localhost:3001/api/login", {method: "POST", body: JSON.stringify({username: formState.email, password: formState.password})}).then(res=>{
+        // axios("http://localhost:3001/api/login", {method: "POST", body: JSON.stringify({username: formState.email, pass: formState.pass})}).then(res=>{
         //   console.log(res);
         // })
         
@@ -73,7 +75,6 @@ function Login() {
         <button type="submit" className="btn btn-secondary">Login</button>
       </form>
 
-      {/* CONTAINER CLOSE */}
       <br></br>
     </div>
   );

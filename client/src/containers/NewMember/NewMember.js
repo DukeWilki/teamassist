@@ -14,7 +14,7 @@ function NewMember() {
   console.log(firstname);
   console.log(lastname);
   console.log(email);
-  console.log(dob);
+  console.log(dob); 
   console.log(gender);
   console.log(iscommittee);
   console.log(iscoach);

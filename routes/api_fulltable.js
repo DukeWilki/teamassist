@@ -4,7 +4,7 @@ const router = express.Router();
 const { QueryTypes } = require('sequelize');
 
 router.get("/fulltable", function(req, res) {
-  console.log('heyyy member');
+  console.log('heyyy full table');
     // findAll returns all entries for a table when used with no options
     db.sequelize.query(
       "SELECT * FROM records LEFT JOIN members ON records.member_id = members.id JOIN certs ON records.cert_id = certs.id ORDER BY members.lastname, members.firstname, expiry;",

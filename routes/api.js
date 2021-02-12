@@ -20,18 +20,20 @@ router.all("*", function (req, res, next) {
 
 // })
 
-router.post("/login", (req, res) => {
-  res.json({
-    email: req.body.email,
-    password: req.body.password,
-    // id: req.body.id,
-  });
-});
+// router.post("/login", (req, res) => {
+//   console.log('this should not be called')
+//   res.json({
+//     email: req.body.email,
+//     password: req.body.password,
+//     test: 'test',
+//     // id: req.body.id,
+//   });
+// });
 
-router.get("/logout", (req, res) => {
-  req.logout();
-  res.redirect("/login");
-});
+// router.get("/logout", (req, res) => {
+//   req.logout();
+//   res.redirect("/login");
+// });
 
 router.get("/api/user_data", function (req, res) {
   if (!req.user) {
