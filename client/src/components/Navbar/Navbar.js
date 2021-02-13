@@ -38,11 +38,6 @@ function Navbar() {
                 </Link>
             </p>
             <p>
-                <Link className="mb-1 mr-1 button-nav nav-btn btn-sm active" to="/dashboard">
-                    Dashboard
-                </Link>
-            </p>
-            <p>
                 <button
                     className="btn btn-sm active"
                     id="logoutBtn"

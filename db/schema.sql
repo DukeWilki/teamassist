@@ -42,3 +42,12 @@ CREATE TABLE records (
 	FOREIGN KEY (cert_id) REFERENCES certs(id),
 	FOREIGN KEY (auth_id) REFERENCES members(id)
     );
+
+
+CREATE TABLE users (
+	id INT NOT NULL auto_increment,
+    email VARCHAR(50),
+    `password` VARCHAR(50),
+    dob DATE,
+    PRIMARY KEY (id)
+    );
