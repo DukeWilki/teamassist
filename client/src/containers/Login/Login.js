@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
+import { useAppContext } from '../../store';
 import { loginUser, getUsers } from '../../utils/userApis';
 import { useHistory } from 'react-router-dom';
+import { setUserLoggedIn } from '../../actions';
 
 // import { checkFormFields } from './checkFormFields';
 
@@ -21,6 +23,7 @@ function Login() {
 //     setFormState({ ...formState, errors, formIsValid });
 // };
 
+const [, appDispatch ] = useAppContext();
 
   const onChange = (event) => {
     setFormState({ ...formState, [event.target.name]: event.target.value });
@@ -40,6 +43,11 @@ function Login() {
             const res = await loginUser(userData)
             console.log(res.data);
             if (res.data === "TRUE") {
+              const response = await loginUser(userData);
+              // Set token to localStorage
+              const token = response.data;
+              // Set user to logged in
+              await setUserLoggedIn(token, appDispatch);
               history.push('/');
             }
 
