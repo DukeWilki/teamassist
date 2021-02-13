@@ -3,7 +3,7 @@
 const fs = require('fs');
 const path = require('path');
 const { Sequelize, DataTypes } = require('sequelize');
-
+const mysql = require('mysql')
 
 
 const basename = path.basename(module.filename);

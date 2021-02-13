@@ -64,7 +64,7 @@ function Register() {
             <div className="mx-auto mt-5 col-md-6">
                 <form noValidate 
                 onSubmit={onSubmit}>
-                    <h1 className="mb-3 h3 font-weight normal">Please Sign in</h1>
+                    <h1 className="mb-3 h3 title-text font-weight normal">Sign up to use this app</h1>
 
                     <div className="form-group">
                         <label htmlFor="email">Email Address</label>

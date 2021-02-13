@@ -5,7 +5,7 @@ import { loginUser, getUsers } from '../../utils/userApis';
 import { useHistory } from 'react-router-dom';
 import { setUserLoggedIn } from '../../actions';
 
-// import { checkFormFields } from './checkFormFields';
+// import { checkFormFields } from '../Register/checkFormFields';
 
 function Login() {
 
@@ -60,6 +60,7 @@ const [, appDispatch ] = useAppContext();
         console.log('Form has errors.');
     }
 };
+
 
 
 
