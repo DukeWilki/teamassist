@@ -11,7 +11,7 @@ function Navbar() {
     const handleLogOut = (e) => {
         e.preventDefault();
         setUserLogout(dispatch);
-        history.push('/');
+        history.push('/login');
     };
 
     console.log({state});

@@ -11,11 +11,13 @@ router.post("/login", passport.authenticate("local"), (req, res) => {
     console.log("api")
     console.log("BOOM");
 
-  res.json({
-    email: req.body.email,
-    pass: req.body.pass,
-    id: req.body.id,
-  });
+    // res.redirect("/")
+    res.json("TRUE")
+//   res.json({
+//     email: req.body.email,
+//     pass: req.body.pass,
+//     id: req.body.id,
+//   });
 });
 
 router.get("/logout", (req, res) => {

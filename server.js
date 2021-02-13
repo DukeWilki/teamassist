@@ -10,6 +10,7 @@ const isAuthenticated = require("./config/isAuthenticated");
 const connectDb = require("./config/database");
 // const MongoStore = require("connect-mongo")(session);
 const routes = require("./routes/api");
+const registerroutes = require("./routes/api_register");
 const loginroutes = require("./routes/api_login");
 const certlistroutes = require("./routes/api_certlist");
 const memberlistroutes = require("./routes/api_memberlist");
@@ -21,7 +22,7 @@ const updaterecordroutes = require("./routes/api_updaterecord");
 const updatememberroutes = require("./routes/api_updatemember");
 const displaynameroutes = require("./routes/api_displayname");
 const fulltableroutes = require("./routes/api_fulltable");
-const signuproutes = require("./routes/api_signup");
+// const signuproutes = require("./routes/api_register");
 
 // // RESET TABLES ON INITIAL LOAD
 // const db = require('./models/index');
@@ -82,6 +83,7 @@ app.use(passport.session());
 // app.use("/api",  passport Config.authenticate('local'));
 // app.use("/api",  passport);
 app.use('/api',  routes);
+app.use('/api',  registerroutes);
 app.use('/api',  loginroutes);
 app.use('/api',  certlistroutes);
 app.use('/api',  memberlistroutes);
@@ -93,7 +95,7 @@ app.use('/api',  updaterecordroutes);
 app.use('/api',  updatememberroutes);
 app.use('/api',  displaynameroutes);
 app.use('/api',  fulltableroutes);
-app.use('/api',  signuproutes);
+// app.use('/api',  signuproutes);
 
 // Start the API server
 app.listen(PORT, () =>

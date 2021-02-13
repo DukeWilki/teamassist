@@ -1,4 +1,5 @@
-export const checkFormFields = ({ email, first_name, last_name, password }) => {
+export const checkFormFields = ({ email, password }) => {
+// export const checkFormFields = ({ email, first_name, last_name, password }) => {
     let errors = {};
     let formIsValid = true;
     // email
@@ -22,25 +23,25 @@ export const checkFormFields = ({ email, first_name, last_name, password }) => {
         errors['password'] = 'Password must be at least 6 characters';
     }
 
-    // firstName
-    if (!first_name) {
-        formIsValid = false;
-        errors['first_name'] = 'Cannot be empty';
-    } else if (typeof first_name !== 'undefined') {
-        if (!first_name.match(/^[a-zA-Z]+$/)) {
-            formIsValid = false;
-            errors['first_name'] = 'Only letters';
-        }
-    }
+    // // firstName
+    // if (!first_name) {
+    //     formIsValid = false;
+    //     errors['first_name'] = 'Cannot be empty';
+    // } else if (typeof first_name !== 'undefined') {
+    //     if (!first_name.match(/^[a-zA-Z]+$/)) {
+    //         formIsValid = false;
+    //         errors['first_name'] = 'Only letters';
+    //     }
+    // }
 
-    // lastName
-    if (!last_name) {
-        formIsValid = false;
-        errors['last_name'] = 'Cannot be empty';
-    } else if (!last_name.match(/^[a-zA-Z]+$/)) {
-        formIsValid = false;
-        errors['last_name'] = 'Only letters';
-    }
+    // // lastName
+    // if (!last_name) {
+    //     formIsValid = false;
+    //     errors['last_name'] = 'Cannot be empty';
+    // } else if (!last_name.match(/^[a-zA-Z]+$/)) {
+    //     formIsValid = false;
+    //     errors['last_name'] = 'Only letters';
+    // }
 
     return [errors, formIsValid];
 };

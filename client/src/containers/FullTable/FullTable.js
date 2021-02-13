@@ -22,9 +22,9 @@ function RecordList() {
       
   //   }
 
-    // return Object.assign({}, isactive, {
-    //   isChecked: !!Number(isactive.isChecked), // OR
-    //   isChecked: Boolean(Number(isactive.isChecked))
+  //   return Object.assign({}, isactive, {
+  //     isChecked: !!Number(isactive.isChecked), // OR
+  //     isChecked: Boolean(Number(isactive.isChecked))
   //   });
   // }
 

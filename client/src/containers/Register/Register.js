@@ -10,8 +10,8 @@ function Register() {
     const history = useHistory();
 
     const [registerState, setRegisterState] = useState({
-        first_name: '',
-        last_name: '',
+        // first_name: '',
+        // last_name: '',
         email: '',
         password: '',
         errors: {},
@@ -32,8 +32,8 @@ function Register() {
         handleValidation();
         event.preventDefault();
         const userData = {
-            first_name: registerState.first_name,
-            last_name: registerState.last_name,
+            // first_name: registerState.first_name,
+            // last_name: registerState.last_name,
             email: registerState.email,
             password: registerState.password,
         };
@@ -63,39 +63,9 @@ function Register() {
         <div className="row">
             <div className="mx-auto mt-5 col-md-6">
                 <form noValidate 
-                onSubmit={onSubmit}
-                >
+                onSubmit={onSubmit}>
                     <h1 className="mb-3 h3 font-weight normal">Please Sign in</h1>
-                    <div className="form-group">
-                        <label htmlFor="first_name">First Name</label>
-                        <input
-                            type="text"
-                            refs="first_name"
-                            className="form-control"
-                            name="first_name"
-                            placeholder="Enter First Name"
-                            value={registerState.first_name}
-                            onChange={onChange}
-                        />
-                        <span style={{ color: 'red' }}>
-                            {registerState.errors['first_name']}
-                            </span>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="last_name">Last Name</label>
-                        <input
-                            type="text"
-                            refs="last_name"
-                            className="form-control"
-                            name="last_name"
-                            placeholder="Enter Last Name"
-                            value={registerState.last_name}
-                            onChange={onChange}
-                        />
-                        <span style={{ color: 'red' }}>
-                            {registerState.errors['last_name']}
-                            </span>
-                    </div>
+
                     <div className="form-group">
                         <label htmlFor="email">Email Address</label>
                         <input
