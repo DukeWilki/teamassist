@@ -4,23 +4,25 @@ require("dotenv").config();
 const fs = require("fs");
 const path = require("path");
 const { Sequelize, DataTypes } = require("sequelize");
-const mysql = require("mysql");
+// const mysql = require("mysql");
+let sequelize 
 
 if (process.env.JAWSDB_URL) {
-  connection = mysql.createConnection(process.env.JAWSDB_URL);
-  const db = {};
-  const sequelize = new Sequelize(
-    config.database,
-    config.username,
-    config.password,
-    {
-      host: config.host,
-      port: config.port,
-      dialect: "mysql",
-    }
-  );
+  // connection = mysql.createConnection(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(process.env.JAWSDB_URL)
+  // const db = {};
+  // const sequelize = new Sequelize(
+  //   config.database,
+  //   config.username,
+  //   config.password,
+  //   {
+  //     host: config.host,
+  //     port: config.port,
+  //     dialect: "mysql",
+  //   }
+  // );
 } else {
-  const basename = path.basename(module.filename);
+
   const config = {
     username: process.env.DB_USERNAME || "root",
     password: process.env.DB_PASSWORD || "Queenw00d.",
@@ -28,8 +30,8 @@ if (process.env.JAWSDB_URL) {
     host: process.env.DB_HOSTNAME || "localhost",
     port: process.env.DB_PORT || 3306,
   };
-  const db = {};
-  const sequelize = new Sequelize(
+
+  sequelize = new Sequelize(
     config.database,
     config.username,
     config.password,
@@ -39,6 +41,9 @@ if (process.env.JAWSDB_URL) {
       dialect: "mysql",
     }
   );
+}
+const basename = path.basename(module.filename);
+const db = {};
 
   fs.readdirSync(__dirname)
     .filter((file) => {
@@ -70,4 +75,4 @@ if (process.env.JAWSDB_URL) {
   db.Sequelize = Sequelize;
 
   module.exports = db;
-}
+
