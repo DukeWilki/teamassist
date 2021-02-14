@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import "./CertSummaryList.css";
 import axios from 'axios';
 import { Link } from "react-router-dom";
 
@@ -26,6 +25,11 @@ function CertSummaryList(props) {
     return (date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear())
   };
 
+  function updaterecordHandler(){
+    var link = `/#/updaterecord/${props.id}`     
+    window.location.href = link;
+  }
+
   // Render cert summary list
   return (
     <div className="menu-list">
@@ -33,7 +37,7 @@ function CertSummaryList(props) {
         console.log(record);
         return (
           <p key={record.id} >
-            <Link to={`/#/updaterecord/${record.id}`}> 
+            <Link to={`/#/updaterecord/${record.id}`} onClick={updaterecordHandler}>
             <span className="menu-text">{record.firstname} {record.lastname} </span><br></br> 
             {/* <span className="gen-text">{record.certname}</span> <br></br>  */}
             <span className="gen-text">Expiry: {parseDate(record.expiry)}</span></Link>

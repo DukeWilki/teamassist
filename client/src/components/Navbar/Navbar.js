@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useAppContext } from '../../store';
 import { setUserLogout } from '../../actions';
-import './style.css';
+
 
 function Navbar() {
     const history = useHistory();

@@ -37,7 +37,7 @@ function NewRecord(props) {
   }, []);
   // FUNCTION TO INVOKE API ROUTE AND PUT MYSQL
   function submitHandler(e) {
-    e.preventDefault();
+    // e.preventDefault();
     console.log([]);
     axios
       .post("/api/addrecord", {
@@ -71,7 +71,6 @@ function NewRecord(props) {
         );
       })}
 
-        {/* <label className="label">Certificate</label> */}
         <div className="control">
           <div className="select">
             <select

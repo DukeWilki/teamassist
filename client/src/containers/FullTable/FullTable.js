@@ -19,7 +19,6 @@ function RecordList() {
 
 
   // Render record list
-  // const isactive = this.state.isactive;
   return (
     <div>
         <h4>For best results, view table on a desktop or tablet</h4>
@@ -45,11 +44,6 @@ function RecordList() {
               <td>{record.certname} </td>
               <td>{record.expiry} </td>
               <td>{toYesNo(record.isactive)}</td>               
-
-
-
-
-
           </tr>
         );
       })}

@@ -41,13 +41,6 @@ function EditMember(props) {
     );
   }
 
-  // function parseBoolean(props) {
-  //   const isactive = new active(props);
-  //   return (
-  //     "Yes"
-  //   );
-  // }
-
   function toYesNo(iscommittee) {
     if(iscommittee){return 'yes'}else{return 'no'}
   }
@@ -59,10 +52,6 @@ function EditMember(props) {
   function toYesNo(isactive) {
     if(isactive){return 'yes'}else{return 'no'}
   }
-
-
-
-
 
   const [expiry, setExpiry] = useState([]);
   console.log(expiry);
