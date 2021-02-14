@@ -1,9 +1,10 @@
-CREATE DATABASE teamassist;
-DROP DATABASE teamassist;
-use teamassist;
+-- CREATE DATABASE teamassist;
+-- DROP DATABASE teamassist;
+-- use teamassist;
 -- DROP TABLE records;
 -- DROP TABLE certs;
 -- DROP TABLE members;
+-- DROP TABLE users;
 
 CREATE TABLE members (
 	id INT auto_increment NOT NULL,
@@ -16,28 +17,31 @@ CREATE TABLE members (
     iscommittee BOOLEAN DEFAULT FALSE,
     iscoach BOOLEAN DEFAULT FALSE,
     isactive BOOLEAN DEFAULT TRUE,
-    PRIMARY KEY (id)
+    -- createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)
     );
 
     
 CREATE TABLE certs (
-	id INT NOT NULL auto_increment,
+	id INT auto_increment NOT NULL,
     certname VARCHAR(50),
 	recordtype VARCHAR(50),
     authority VARCHAR(50),
-    PRIMARY KEY (id)
+    -- createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)
     );
 
     
 CREATE TABLE records (
-	id INT NOT NULL auto_increment,
+	id INT auto_increment NOT NULL,
     member_id INT,
     cert_id INT,
     auth_id INT,
     auth_date TIMESTAMP,
     completed DATE,
     expiry DATE,
-    PRIMARY KEY (id),
+    -- createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id),
     FOREIGN KEY (member_id) REFERENCES members(id),
 	FOREIGN KEY (cert_id) REFERENCES certs(id),
 	FOREIGN KEY (auth_id) REFERENCES members(id)
@@ -45,9 +49,9 @@ CREATE TABLE records (
 
 
 CREATE TABLE users (
-	id INT NOT NULL auto_increment,
+	id INT auto_increment NOT NULL,
     email VARCHAR(50),
     `password` VARCHAR(50),
-    dob DATE,
-    PRIMARY KEY (id)
+    -- createdAt TIMESTAMP NOT NULL,
+    PRIMARY KEY(id)
     );

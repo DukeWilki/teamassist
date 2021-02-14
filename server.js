@@ -38,12 +38,12 @@ app.use(express.json());
 // app.use(cookieParser(process.env.SESSION_SECRET));
 // app.use(cors(corsConfig));
 const PORT = process.env.PORT || 3001;
-const port = process.env.PORT || 4000;
-app.listen(port);
-// Serve up static assets
-if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
-}
+// const port = process.env.PORT || 4000;
+// app.listen(port);
+// // Serve up static assets
+// if (process.env.NODE_ENV === "production") {
+//     app.use(express.static("client/build"));
+// }
 // app.use(
 //     session({
 //         resave: true,
