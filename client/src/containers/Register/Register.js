@@ -1,162 +1,99 @@
-import React, { useState } from 'react';
-import axios from "axios";
-import { useHistory } from 'react-router-dom';
-import { registerUser, getUsers } from '../../utils/userApis';
-import { checkFormFields } from './checkFormFields';
-
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { registerUser, getUsers } from "../../utils/userApis";
+import { checkFormFields } from "./checkFormFields";
 
 function Register() {
+  const history = useHistory();
 
-    const history = useHistory();
+  const [registerState, setRegisterState] = useState({
+    email: "",
+    password: "",
+    errors: {},
+    formIsValid: true,
+  });
 
-    const [registerState, setRegisterState] = useState({
-        // first_name: '',
-        // last_name: '',
-        email: '',
-        password: '',
-        errors: {},
-        formIsValid: true,
+  const handleValidation = () => {
+    const [errors, formIsValid] = checkFormFields(registerState);
+    setRegisterState({ ...registerState, errors, formIsValid });
+  };
+
+  const onChange = (event) => {
+    setRegisterState({
+      ...registerState,
+      [event.target.name]: event.target.value,
     });
+  };
 
-    const handleValidation = () => {
-        const [errors, formIsValid] = checkFormFields(registerState);
-        setRegisterState({ ...registerState, errors, formIsValid });
+  const onSubmit = async (event) => {
+    let errors = {};
+    handleValidation();
+    event.preventDefault();
+    const userData = {
+      email: registerState.email,
+      password: registerState.password,
     };
-
-    const onChange = (event) => {
-        setRegisterState({ ...registerState, [event.target.name]: event.target.value });
-    };
-
-    const onSubmit = async (event) => {
-        let errors = {};
-        handleValidation();
-        event.preventDefault();
-        const userData = {
-            // first_name: registerState.first_name,
-            // last_name: registerState.last_name,
-            email: registerState.email,
-            password: registerState.password,
-        };
-        if (registerState.formIsValid) {
-            try {
-                const res = await registerUser(userData)
-                console.log(res.data);
-                history.push('/login');
-                console.log('Form submitted');
-            } catch (error) {
-                errors['email'] = 'Email already exists';
-                setRegisterState({ ...registerState, errors })
-            }
-        } else {
-            console.log('Form has errors.');
-        }
-    };
-
-//   const [formState, setFormState] = React.useState({
-//     email: "",
-//     password: ""
-//   })
+    if (registerState.formIsValid) {
+      try {
+        const res = await registerUser(userData);
+        history.push("/login");
+        console.log("Form submitted");
+      } catch (error) {
+        errors["email"] = "Email already exists";
+        setRegisterState({ ...registerState, errors });
+      }
+    } else {
+      console.log("Form has errors.");
+    }
+  };
 
   // Render Signup form
   return (
     <div className="container">
-        <div className="row">
-            <div className="mx-auto mt-5 col-md-6">
-                <form noValidate 
-                onSubmit={onSubmit}>
-                    <h1 className="mb-3 h3 title-text font-weight normal">Sign up to use this app</h1>
+      <div className="row">
+        <div className="mx-auto mt-5 col-md-6">
+          <form noValidate onSubmit={onSubmit}>
+            <h1 className="mb-3 h3 title-text font-weight normal">
+              Sign up to use this app
+            </h1>
 
-                    <div className="form-group">
-                        <label htmlFor="email">Email Address</label>
-                        <input
-                            type="email"
-                            refs="email"
-                            className="form-control"
-                            name="email"
-                            placeholder="Enter Email"
-                            value={registerState.email}
-                            onChange={onChange}
-                        />
-                        <span style={{ color: 'red' }}>
-                            {registerState.errors['email']}
-                            </span>
-                    </div>
-                    <div className="form-group">
-                        <label htmlFor="password">Password</label>
-                        <input
-                            type="password"
-                            refs="password"
-                            className="form-control"
-                            name="password"
-                            placeholder="Enter Password"
-                            value={registerState.password}
-                            onChange={onChange}
-                        />
-                        <span style={{ color: 'red' }}>
-                            {registerState.errors['password']}
-                            </span>
-                    </div>
-                    <button type="submit" className="btn btn-lg btn-primary btn-block">
-                        Register
-                    </button>
-                </form>
+            <div className="form-group">
+              <label htmlFor="email">Email Address</label>
+              <input
+                type="email"
+                refs="email"
+                className="form-control"
+                name="email"
+                placeholder="Enter Email"
+                value={registerState.email}
+                onChange={onChange}
+              />
+              <span style={{ color: "red" }}>
+                {registerState.errors["email"]}
+              </span>
             </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                refs="password"
+                className="form-control"
+                name="password"
+                placeholder="Enter Password"
+                value={registerState.password}
+                onChange={onChange}
+              />
+              <span style={{ color: "red" }}>
+                {registerState.errors["password"]}
+              </span>
+            </div>
+            <button type="submit" className="btn btn-lg btn-primary btn-block">
+              Register
+            </button>
+          </form>
         </div>
+      </div>
     </div>
-
-
-
-
-
-                        
-    /* <div>
-
-      <form action="" className="box" onSubmit= {(e)=> {
-        e.preventDefault()
-        // validation
-        console.log(formState);
-        axios({
-          method: 'post',
-          url: "http://localhost:3001/api/signup",
-          data: {
-            username: formState.email,
-          },headers: {
-            "Access-Control-Allow-Origin": true 
-          }
-        });
-
-        //   function fetchAdmins() {
-        //     return axios.get("/api/validate").then((response) => response.data);
-        //   }
-        
-        //   useEffect(() => {
-        //     fetchAdmins().then((admins) => setAdmins(admins));
-        //   }, []);
-      }}>
-        <div className="field">
-          <div className="control has-icons-left">
-            <input
-              type="email"
-              placeholder="Email address"
-              className="input"
-              required
-              value= {formState.email}
-              // onChange= {(e)=> {
-              //   setFormState({
-              //     ...formState,
-              //     email: e.target.value
-              //   })
-              // }} 
-            ></input>
-          </div>
-        </div>
-
-        <button type="submit" className="btn btn-secondary">Validate</button>
-      </form>
-
-      <br></br>
-    </div> */
   );
 }
-console.log("hello");
 export default Register;

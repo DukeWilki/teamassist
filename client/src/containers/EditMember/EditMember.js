@@ -15,14 +15,7 @@ function EditMember(props) {
   const [iscommittee, setIscommittee] = useState([]);
   const [iscoach, setIscoach] = useState([]);
   const [isactive, setIsactive] = useState([]);
-  console.log(firstname);
-  console.log(lastname);
-  console.log(email);
-  console.log(dob);
-  console.log(gender);
-  console.log(iscommittee);
-  console.log(iscoach);
-  console.log(isactive);
+  // console.log(firstname, lastname, email, dob, gender, iscommittee, iscoach, isactive);
 
   function fetchMembers() {
     return axios
@@ -42,22 +35,33 @@ function EditMember(props) {
   }
 
   function toYesNo(iscommittee) {
-    if(iscommittee){return 'yes'}else{return 'no'}
+    if (iscommittee) {
+      return "yes";
+    } else {
+      return "no";
+    }
   }
 
   function toYesNo(iscoach) {
-    if(iscoach){return 'yes'}else{return 'no'}
+    if (iscoach) {
+      return "yes";
+    } else {
+      return "no";
+    }
   }
 
   function toYesNo(isactive) {
-    if(isactive){return 'yes'}else{return 'no'}
+    if (isactive) {
+      return "yes";
+    } else {
+      return "no";
+    }
   }
 
   const [expiry, setExpiry] = useState([]);
-  console.log(expiry);
 
   function submitFirstnameHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/firstname/" + id, {
         firstname: firstname,
@@ -72,7 +76,7 @@ function EditMember(props) {
   }
 
   function submitLastnameHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/lastname/" + id, {
         lastname: lastname,
@@ -87,7 +91,7 @@ function EditMember(props) {
   }
 
   function submitEmailHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/email/" + id, {
         email: email,
@@ -102,7 +106,7 @@ function EditMember(props) {
   }
 
   function submitDobHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/dob/" + id, {
         dob: dob,
@@ -117,7 +121,7 @@ function EditMember(props) {
   }
 
   function submitGenderHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/gender/" + id, {
         gender: gender,
@@ -132,7 +136,7 @@ function EditMember(props) {
   }
 
   function submitIscommitteeHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/iscommittee/" + id, {
         iscommittee: iscommittee,
@@ -147,7 +151,7 @@ function EditMember(props) {
   }
 
   function submitIscoachHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/iscoach/" + id, {
         iscoach: iscoach,
@@ -161,9 +165,8 @@ function EditMember(props) {
       });
   }
 
-
   function submitIsactiveHandler(e) {
-    console.log([]);
+    // console.log([]);
     axios
       .patch("/api/updatemember/isactive/" + id, {
         isactive: isactive,
@@ -178,31 +181,33 @@ function EditMember(props) {
   }
 
   // Render member
-  console.log({ id });
+  // console.log({ id });
   return (
     <div>
-            <h4 className="title-text">Update member details:</h4>
+      <h4 className="title-text">Update member details:</h4>
       {members.map((member, i) => {
-        console.log(member);
         return (
           <p key={member.id}>
             <h4 className="title-text">
               {member.firstname} {member.lastname}
             </h4>
+            <p className="gen-text">{member.email} </p>
             <p className="gen-text">
-            {member.email} </p>
-            <p className="gen-text"> {parseDate(member.dob)} {member.gender} 
+              {" "}
+              {parseDate(member.dob)} {member.gender}
             </p>
             <p className="gen-text">
-              Committee member: {toYesNo(member.iscommittee)} </p>
-            <p className="gen-text">Coach: {toYesNo(member.iscoach)}
+              Committee member: {toYesNo(member.iscommittee)}{" "}
             </p>
-            <p className="gen-text">Member active: {toYesNo(member.isactive)}</p>
+            <p className="gen-text">Coach: {toYesNo(member.iscoach)}</p>
+            <p className="gen-text">
+              Member active: {toYesNo(member.isactive)}
+            </p>
 
             <form onSubmit={submitFirstnameHandler}>
               <div className="control">
                 <input
-              className="input input-box gen-text"
+                  className="input input-box gen-text"
                   type="text"
                   name="firstname"
                   value={firstname}
@@ -222,7 +227,7 @@ function EditMember(props) {
             <form onSubmit={submitLastnameHandler}>
               <div className="control">
                 <input
-              className="input input-box gen-text"
+                  className="input input-box gen-text"
                   type="text"
                   name="lastname"
                   value={lastname}
@@ -242,7 +247,7 @@ function EditMember(props) {
             <form onSubmit={submitEmailHandler}>
               <div className="control">
                 <input
-              className="input input-box gen-text"
+                  className="input input-box gen-text"
                   type="email"
                   name="email"
                   value={email}
@@ -261,10 +266,9 @@ function EditMember(props) {
 
             <form onSubmit={submitDobHandler}>
               <div className="field">
-                {/* <label className="label">Current DOB: {member.dob}</label> */}
                 <div className="control">
                   <input
-              className="input input-box gen-text"
+                    className="input input-box gen-text"
                     type="date"
                     name="dob"
                     value={dob}
@@ -278,8 +282,6 @@ function EditMember(props) {
                   >
                     Update
                   </button>
-                  {console.log(dob)}
-                  {console.log(member.dob)}
                 </div>
               </div>
             </form>
@@ -288,17 +290,17 @@ function EditMember(props) {
               <div className="control">
                 <div className="select">
                   <select
-              className="input input-box gen-text"
-                    // type="date"
+                    className="input input-box gen-text"
                     name="gender"
                     value={gender}
-                    // selection={member.gender}
                     onChange={(e) => setGender(e.target.value)}
                   >
                     <option selected hidden>
                       {member.gender}
                     </option>
-                    <option value="" selected disabled>{member.gender}</option>
+                    <option value="" selected disabled>
+                      {member.gender}
+                    </option>
                     <option>Unknown</option>
                     <option>Female</option>
                     <option>Male</option>
@@ -316,7 +318,7 @@ function EditMember(props) {
             </form>
 
             <form onSubmit={submitIscommitteeHandler}>
-            <label className="checkbox menu-text">
+              <label className="checkbox menu-text">
                 <input
                   className="input"
                   type="checkbox"
@@ -335,9 +337,9 @@ function EditMember(props) {
                 Update
               </button>
             </form>
-            {/* <br></br> */}
+
             <form onSubmit={submitIscoachHandler}>
-            <label className="checkbox menu-text">
+              <label className="checkbox menu-text">
                 <input
                   className="input"
                   type="checkbox"
@@ -356,7 +358,7 @@ function EditMember(props) {
                 Update
               </button>
             </form>
-            {/* <br></br> */}
+
             <form onSubmit={submitIsactiveHandler}>
               <label className="checkbox menu-text">
                 <input
@@ -378,11 +380,10 @@ function EditMember(props) {
               </button>
             </form>
             <Link to="/members/">Back to Member Lookup</Link>
-           </p>
+          </p>
         );
-        
       })}
-            <p className="gen-text">Member number #{id}</p>
+      <p className="gen-text">Member number #{id}</p>
     </div>
   );
 }

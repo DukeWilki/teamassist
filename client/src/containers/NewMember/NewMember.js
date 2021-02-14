@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-
 function NewMember() {
   const [firstname, setFirstname] = useState([]);
   const [lastname, setLastname] = useState([]);
@@ -12,13 +11,12 @@ function NewMember() {
   const [iscommittee, setIscommittee] = useState([]);
   const [iscoach, setIscoach] = useState([]);
 
-  console.log(firstname);
-  console.log(lastname);
-  console.log(email);
-  console.log(dob); 
-  console.log(gender);
-  console.log(iscommittee);
-  console.log(iscoach);
+  // console.log(firstname, lastname, email, dob, gender, iscommittee, iscoach);
+
+  // function confirmHandler() {
+  //   var link = `/#/confimation`;
+  //   window.location.href = link;
+  // }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -35,18 +33,19 @@ function NewMember() {
       })
       .then((response) => {
         console.log(response);
-        
       })
       .catch((error) => {
         console.log(error);
       });
+      // confirmHandler()
   }
+
+
 
   // Render New Member form
   return (
     <div className="new-member-form gen-text">
       <form onSubmit={submitHandler}>
-        {/* <Header /> */}
         <div className="field">
           <label className="label">First Name</label>
           <div className="control">
@@ -56,7 +55,6 @@ function NewMember() {
               name="firstname"
               value={firstname}
               placeholder="First name"
-              // onChange={changeHandler}
               onChange={(e) => setFirstname(e.target.value)}
             ></input>
           </div>
@@ -108,11 +106,13 @@ function NewMember() {
           <div className="select">
             <select
               className="input input-box gen-text"
-              // type="date"
               name="gender"
               value={gender}
               onChange={(e) => setGender(e.target.value)}
-            ><option value="" selected disabled>Please select</option>
+            >
+              <option value="" selected disabled>
+                Please select
+              </option>
               <option>Unknown</option>
               <option>Female</option>
               <option>Male</option>
@@ -143,12 +143,10 @@ function NewMember() {
         </label>
 
         <div className="control">
-        <Link to={"/confirmation/" }><button type="submit" className="button is-primary button-text">
-            Submit
-          </button></Link>
+            <button type="submit" className="button is-primary button-text">
+              Submit
+            </button>
         </div>
-
-        {/* <Footer /> */}
       </form>
     </div>
   );

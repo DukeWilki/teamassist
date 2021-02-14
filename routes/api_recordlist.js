@@ -4,7 +4,6 @@ const router = express.Router();
 const { QueryTypes } = require('sequelize');
 
 router.get("/certs/:id", function (req, res) {
-  console.log(req.params.id);
 
   // db.sequelize.query(
     db.sequelize.query(

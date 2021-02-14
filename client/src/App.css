@@ -1,9 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 .App {
-  text-align: center; 
+  text-align: center;
   background-color: #7ba7b5;
   min-height: 100vh;
 }
@@ -12,32 +11,15 @@
   padding-top: 7%;
 }
 
-
-/* @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 .button-nav {
-  color: #FFFFFF !important;
+  color: #ffffff !important;
   /* padding-left: 20px; */
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: "Big Shoulders Display", cursive;
   font-size: large;
   text-decoration: none;
-  /* background-color: rgb(89, 206, 89); */
-  /* color: #333333; */
-  /* padding: 2px 10px 2px 10px; */
-  /* border-top: 1px solid #CCCCCC;
-  border-right: 1px solid #333333;
-  border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC; */
-  /* border-radius: 25px; */
   margin-left: 10px;
   margin-top: 15px;
-  
 }
-
 
 .App-link {
   color: #61dafb;
@@ -52,18 +34,17 @@
   }
 }
 
-
 .button-text {
-  font-family: 'Big Shoulders Display', cursive;
+  font-family: "Big Shoulders Display", cursive;
   font-size: large;
   text-decoration: none;
   background-color: rgb(89, 206, 89);
   color: #333333;
   padding: 2px 10px 2px 10px;
-  border-top: 1px solid #CCCCCC;
+  border-top: 1px solid #cccccc;
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
-  border-left: 1px solid #CCCCCC;
+  border-left: 1px solid #cccccc;
   border-radius: 25px;
   margin-left: 10px;
   margin-top: 15px;
@@ -78,7 +59,7 @@
 }
 
 .button-text:disabled,
-.button-text[disabled]{
+.button-text[disabled] {
   border: 1px solid #999999;
   background-color: #cccccc;
   color: #666666;
@@ -86,65 +67,50 @@
 
 .input-box {
   width: 160px;
-
 }
 
-.gen-text{
-  font-family: 'Montserrat', sans-serif;
+.gen-text {
+  font-family: "Montserrat", sans-serif;
   font-size: small;
   margin-top: 7px;
   margin-bottom: 7px;
-  }
+}
 
-  .menu-text{
-    font-family: 'Montserrat', sans-serif;
-    font-size: medium;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    }
+.menu-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: medium;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 
-    .title-text{
-      font-family: 'Montserrat', sans-serif;
-      font-size: large;
-      margin-top: 10px;
-      margin-bottom: 15px;
-      }
+.title-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: large;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
 
-      .tiny-text{
-        font-family: 'Montserrat', sans-serif;
-        font-size: x-small;
-        margin-top: 5px;
-        margin-bottom: 5px;
-        }
+.tiny-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: x-small;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
-        .massive-text{
-          font-family: 'Montserrat', sans-serif;
-          font-size: xxx-large;
-          margin-top: 5px;
-          margin-bottom: 5px;
-          }
+.massive-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: xxx-large;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
-          
-        .center {
-          margin-left: auto;
-          margin-right: auto;
-        }
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-        .text-button {
-          background: none;
-          border: none;
-          padding: 0;
-          /*optional*/
-          font-family: arial, sans-serif;
-          /*input has OS specific font-family*/
-          color: #069;
-          text-decoration: underline;
-          cursor: pointer;
-      }
-      
-      
-      ul {
-          display: flex; 
-          justify-content: center;
-          padding: 0;
-        }
+ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}

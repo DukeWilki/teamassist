@@ -4,8 +4,6 @@ import { useParams, Link } from "react-router-dom";
 
 function UpdateRecord(props) {
   const { id } = useParams();
-  console.log(id);
-
 
   const [records, setRecords] = useState([]);
 
@@ -27,8 +25,7 @@ function UpdateRecord(props) {
   }
 
   const [expiry, setExpiry] = useState([]);
-  console.log(expiry);
-
+ 
   function submitHandler(e) {
     // e.preventDefault();
     console.log([]);
@@ -49,16 +46,18 @@ function UpdateRecord(props) {
   console.log({ id });
   return (
     <div>
-            <h4 className="title-text">Extend Certification:</h4>
+      <h4 className="title-text">Extend Certification:</h4>
       {records.map((record, i) => {
-        console.log(record);
         return (
           <p key={record.id}>
             <h4 className="title-text">
               {record.firstname} {record.lastname}
             </h4>
             <h4 className="gen-text"> {record.certname} </h4>
-            <h4 className="gen-text"> Current Expiry: {parseDate(record.expiry)}</h4>
+            <h4 className="gen-text">
+              {" "}
+              Current Expiry: {parseDate(record.expiry)}
+            </h4>
           </p>
         );
       })}
@@ -66,7 +65,9 @@ function UpdateRecord(props) {
       <form onSubmit={submitHandler}>
         <div className="field">
           <label className="label">
-            <p className="gen-text"><strong>Select new expiry:</strong></p>
+            <p className="gen-text">
+              <strong>Select new expiry:</strong>
+            </p>
           </label>
           <div className="control">
             <input
@@ -86,7 +87,6 @@ function UpdateRecord(props) {
         </div>
       </form>
       {records.map((record, i) => {
-        console.log(record);
         return <Link to="/members/">Back to Member Lookup</Link>;
       })}
     </div>

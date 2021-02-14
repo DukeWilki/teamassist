@@ -14,27 +14,6 @@ router.all("*", function (req, res, next) {
   next();
 });
 
-// router.get("/api/test", (req, res) => {
-//     console.log("it works!");
-//     res.send("it works!")
-
-// })
-
-// router.post("/login", (req, res) => {
-//   console.log('this should not be called')
-//   res.json({
-//     email: req.body.email,
-//     password: req.body.password,
-//     test: 'test',
-//     // id: req.body.id,
-//   });
-// });
-
-// router.get("/logout", (req, res) => {
-//   req.logout();
-//   res.redirect("/login");
-// });
-
 router.get("/api/user_data", function (req, res) {
   if (!req.user) {
     // The user is not logged in, send back an empty object

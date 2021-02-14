@@ -19,40 +19,33 @@ import EditMember from "./containers/EditMember/EditMember";
 import FullTable from "./containers/FullTable/FullTable";
 import Landing from "./containers/Landing/Landing";
 
-
-
 function App() {
   return (
     <div className="App">
       <div className="container-section">
-      <Router>
-      <Navbar />
-      <Header />
-      {/* <PostForm /> */}
-
-        <Switch>
-        <Route exact path="/" component={Menu} />                     {/* routing complete to all 4 options */}
-        <Route exact path="/landing" component={Landing} />               {/*  */}
-        <Route exact path="/login" component={Login} />               {/*  */}
-        <Route exact path="/register" component={Register} />               
-        <Route exact path="/members" component={MemberSelection} />   {/* routing complete member profile */}
-        <Route path="/members/:id" component={MemberSummary} />    {/* routing complete to edit record | buttons to be completed*/}
-        <Route exact path="/certs" component={CertSelection} />       {/* routing complete cert summary */}
-        <Route path="/certs/:id" component={CertSummary} />        {/* routes to Test.js */}
-        <Route path="/addrecord/:id" component={AddRecord} />
-        <Route path="/updaterecord/:id" component={UpdateRecord} />   {/* API READ to be done | Save/API UPDATE to be done */}
-        <Route path="/newmember" component={NewMember} />             {/* Submit/API POST to be done */}
-        <Route path="/editmember/:id" component={EditMember} />           {/*  */}
-        <Route path="/confirmation" component={Confirmation} />       {/* buttons to be completed */}
-        <Route path="/fulltable" component={FullTable} />
-        <Route component={Error} /> 
-        </Switch>
-
-        <Footer />
+        <Router>
+          <Navbar />
+          <Header />
+          <Switch>
+            <Route exact path="/" component={Menu} />
+            <Route exact path="/landing" component={Landing} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/register" component={Register} />
+            <Route exact path="/members" component={MemberSelection} />
+            <Route path="/members/:id" component={MemberSummary} />
+            <Route exact path="/certs" component={CertSelection} />
+            <Route path="/certs/:id" component={CertSummary} />
+            <Route path="/addrecord/:id" component={AddRecord} />
+            <Route path="/updaterecord/:id" component={UpdateRecord} />
+            <Route path="/newmember" component={NewMember} />
+            <Route path="/editmember/:id" component={EditMember} />
+            <Route path="/confirmation" component={Confirmation} />
+            <Route path="/fulltable" component={FullTable} />
+            <Route component={Error} />
+          </Switch>
+          <Footer />
         </Router>
       </div>
-      {/* <CertSummary /> */}
-      {/* <NewMember /> */} 
     </div>
   );
 }

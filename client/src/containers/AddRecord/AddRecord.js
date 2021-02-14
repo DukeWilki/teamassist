@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function NewRecord(props) {
   const { id } = useParams();
   // console.log("propsID: " + props.id);
-  console.log("{ ID }: " + id);
   const [cert_id, setCert_id] = useState([]);
   const [expiry, setExpiry] = useState([]);
-  console.log(cert_id)
-  console.log(expiry);
+  // console.log(cert_id, expiry);
 
   // LOOK UP CERTS
   const [certs, setCerts] = useState([]);
@@ -21,10 +19,7 @@ function NewRecord(props) {
   }, []);
 
   const [members, setMembers] = useState([]);
-  const [firstname, setFirstname] = useState([]);
-  const [lastname, setLastname] = useState([]);
-  console.log(firstname);
-  console.log(lastname);
+
 
   function fetchMembers() {
     return axios
@@ -38,7 +33,7 @@ function NewRecord(props) {
   // FUNCTION TO INVOKE API ROUTE AND PUT MYSQL
   function submitHandler(e) {
     // e.preventDefault();
-    console.log([]);
+    // console.log([]);
     axios
       .post("/api/addrecord", {
         // member_id: member_id,
@@ -57,19 +52,16 @@ function NewRecord(props) {
   // Render New record form
   return (
     <div className="new-member-form">
-
       <form className="gen-text" onSubmit={submitHandler}>
-
-      <h4 className="title-text">Add Certification to:</h4>
+        <h4 className="title-text">Add Certification to:</h4>
         {members.map((member, i) => {
-        console.log(member);
-        return (
-          //
-          <h4 key={member.id} className="title-text">
-            {member.firstname} {member.lastname}
-          </h4>
-        );
-      })}
+          return (
+            //
+            <h4 key={member.id} className="title-text">
+              {member.firstname} {member.lastname}
+            </h4>
+          );
+        })}
 
         <div className="control">
           <div className="select">
@@ -79,9 +71,16 @@ function NewRecord(props) {
               value={cert_id}
               onChange={(e) => setCert_id(e.target.value)}
             >
-              <option value="" selected disabled>Select Certificate</option>
+              <option value="" selected disabled>
+                Select Certificate
+              </option>
               {certs.map((cert) => {
-                return <option key={cert.id} value={cert.id}> {cert.certname} </option>;
+                return (
+                  <option key={cert.id} value={cert.id}>
+                    {" "}
+                    {cert.certname}{" "}
+                  </option>
+                );
               })}
             </select>
           </div>
