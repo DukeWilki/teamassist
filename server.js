@@ -41,10 +41,10 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001;
 // const port = process.env.PORT || 4000;
 // app.listen(port);
-// // Serve up static assets
-// if (process.env.NODE_ENV === "production") {
-//     app.use(express.static("client/build"));
-// }
+// Serve up static assets
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static("client/build"));
+}
 // app.use(
 //     session({
 //         resave: true,
@@ -103,4 +103,4 @@ app.get('*', (req, res) => {
 // Start the API server
 app.listen(PORT, () =>
     console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`)
-);
+);  
