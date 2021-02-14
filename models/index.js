@@ -9,7 +9,7 @@ const mysql = require('mysql')
 const basename = path.basename(module.filename);
 const config = {
   username: process.env.DB_USERNAME || 'root',
-  password: process.env.DB_PASSWORD || '',
+  password: process.env.DB_PASSWORD || '.',
   database: process.env.DB_NAME || 'teamassist',
   host: process.env.DB_HOSTNAME || 'localhost',
   port: process.env.DB_PORT || 3306,

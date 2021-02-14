@@ -48,6 +48,22 @@ function EditMember(props) {
   //   );
   // }
 
+  function toYesNo(iscommittee) {
+    if(iscommittee){return 'yes'}else{return 'no'}
+  }
+
+  function toYesNo(iscoach) {
+    if(iscoach){return 'yes'}else{return 'no'}
+  }
+
+  function toYesNo(isactive) {
+    if(isactive){return 'yes'}else{return 'no'}
+  }
+
+
+
+
+
   const [expiry, setExpiry] = useState([]);
   console.log(expiry);
 
@@ -156,6 +172,7 @@ function EditMember(props) {
       });
   }
 
+
   function submitIsactiveHandler(e) {
     console.log([]);
     axios
@@ -188,10 +205,10 @@ function EditMember(props) {
             <p className="gen-text"> {parseDate(member.dob)} {member.gender} 
             </p>
             <p className="gen-text">
-              Committee member: {member.iscommittee} </p>
-            <p className="gen-text">Coach: {member.iscoach}
+              Committee member: {toYesNo(member.iscommittee)} </p>
+            <p className="gen-text">Coach: {toYesNo(member.iscoach)}
             </p>
-            <p className="gen-text">Member active: {member.isactive}</p>
+            <p className="gen-text">Member active: {toYesNo(member.isactive)}</p>
 
             <form onSubmit={submitFirstnameHandler}>
               <div className="control">

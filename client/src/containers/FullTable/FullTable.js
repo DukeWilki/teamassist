@@ -13,20 +13,10 @@ function RecordList() {
     fetchRecords().then((records) => setRecords(records));
   }, []);
 
-  // function parseBoolean(isactive) {
+  function toYesNo(isactive) {
+    if(isactive){return 'yes'}else{return 'no'}
+  }
 
-  //   if (isactive === 1) {
-  //     return (
-  //       "True"
-  //     )
-      
-  //   }
-
-  //   return Object.assign({}, isactive, {
-  //     isChecked: !!Number(isactive.isChecked), // OR
-  //     isChecked: Boolean(Number(isactive.isChecked))
-  //   });
-  // }
 
   // Render record list
   // const isactive = this.state.isactive;
@@ -54,8 +44,8 @@ function RecordList() {
               <td>{record.email} </td>
               <td>{record.certname} </td>
               <td>{record.expiry} </td>
-              <td>{record.isactive}</td>               
-              {/* <td>{parseBoolean(record.isactive)}</td>  */}
+              <td>{toYesNo(record.isactive)}</td>               
+
 
 
 
