@@ -1,5 +1,6 @@
 const express = require("express");
 const session = require("express-session");
+const path = require('path');
 // const bodyParser = require("body-parser"); // form data   // multer
 // const cookieParser = require("cookie-parser");
 const dotenv = require("dotenv");
