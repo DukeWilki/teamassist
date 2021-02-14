@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import Menu from "../Menu/Menu";
 import Login from "../Login/Login";
 import Register from "../Register/Register";

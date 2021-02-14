@@ -8,9 +8,6 @@ function MemberSummary() {
   // console.log("number " + id);
 
   const [members, setMembers] = useState([]);
-  const [firstname, setFirstname] = useState([]);
-  const [lastname, setLastname] = useState([]);
-  // console.log(firstname, lastname);
 
   function fetchMembers() {
     return axios

@@ -3,7 +3,7 @@ import axios from "axios";
 import { BrowserRouter as Router, Link, useHistory } from "react-router-dom";
 
 function MemberSummaryList(props) {
-  console.log(props.id);
+  // console.log(props.id);
 
   const [profiles, setRecords] = useState([]);
 
@@ -43,7 +43,6 @@ function MemberSummaryList(props) {
   return (
     <div className="menu-list">
       {profiles.map((record, i) => {
-        console.log(record);
         return (
           <p key={record.id}>
             <Router>
