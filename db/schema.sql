@@ -6,7 +6,7 @@ use teamassist;
 -- DROP TABLE members;
 
 CREATE TABLE members (
-	id INT NOT NULL auto_increment,
+	id INT auto_increment NOT NULL,
     firstname VARCHAR(50),
 	lastname VARCHAR(50),
     email VARCHAR(50),

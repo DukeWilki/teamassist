@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 
 function NewMember() {
@@ -142,9 +143,9 @@ function NewMember() {
         </label>
 
         <div className="control">
-          <button type="submit" className="button is-primary button-text">
+        <Link to={"/confirmation/" }><button type="submit" className="button is-primary button-text">
             Submit
-          </button>
+          </button></Link>
         </div>
 
         {/* <Footer /> */}
