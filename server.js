@@ -71,17 +71,15 @@ app.all("*", function (req, res, next) {
   });
 
 
-  app.get("/", isAuthenticated, function(req, res) {
-    res.sendFile(path.join(__dirname, "./client/src/menu.js"));
-  });
+  // app.get("/", isAuthenticated, function(req, res) {
+  //   res.sendFile(path.join(__dirname, "./client/src/menu.js"));
+  // });
 
 
 
 app.use(passport.initialize());
 app.use(passport.session());
 // Add routes, both API and view
-// app.use("/api",  passport Config.authenticate('local'));
-// app.use("/api",  passport);
 app.use('/api',  routes);
 app.use('/api',  registerroutes);
 app.use('/api',  loginroutes);
@@ -95,7 +93,11 @@ app.use('/api',  updaterecordroutes);
 app.use('/api',  updatememberroutes);
 app.use('/api',  displaynameroutes);
 app.use('/api',  fulltableroutes);
-// app.use('/api',  signuproutes);
+
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
 
 // Start the API server
 app.listen(PORT, () =>
