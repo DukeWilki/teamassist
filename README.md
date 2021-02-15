@@ -27,9 +27,9 @@ Visit the site on https://teamassist.herokuapp.com/
 Look up members to see their credentials and add credentials to their profile, or look up the certification menu to ensure everyones compliance records are up to date.
 
 ## Screenshots
-![Skin for Maia Outrigger Club](https://github.com/DukeWilki[teamassist/blob/main/maia-skin.jpg?raw=true)
-![Skin for ACCA Dragon Boat Racing Club](https://github.com/DukeWilki[teamassist/blob/main/acca-skin.jpg?raw=true)
-![Skin for Sydney Redbacks Korfball Club](https://github.com/DukeWilki[teamassist/blob/main/redback-skin.jpg?raw=true)
+![Screenshot 1](https://github.com/DukeWilki/teamassist/blob/main/maia-skin.JPG)
+![Screenshot 2](https://github.com/DukeWilki/teamassist/blob/main/acca-skin.jpg)
+![Screenshot 3](https://github.com/DukeWilki/teamassist/blob/main/redback-skin.jpg)
 
 ## Design
 The colour scheme is inspired by a local sports club using the app. It is designed to be applicable to different teams and clubs. The team logo can be exchanged in the Public folder, the colours in the main App.css and applicable certifications in the MySQL table. It is designed to fit well on a mobile device so volunteers can update on the go, and coaches check compliance from the sidelines, beach, or where ever you train.
