@@ -1,61 +1,54 @@
-# Final Project
+# Team Assist
 
-## Application Requirements
+<img src="https://img.shields.io/badge/Licence-MIT%20License-blueviolet">
 
-* Must use ReactJS in some way -YES
+## Table of Contents
+* [Description](#description)
+* [Files](#files)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Design](#design)
+* [Screenshots](#screenshots)
+* [License](#license)
+* [Contributing Guidelines](#contributing-guidelines)
+* [Testing Instructions](#testing-instructions)
+* [Questions](#questions)
 
-* Must use a Node and Express Web Server -YES
+## Description
+Team Assist is an application designed to record compliance records for amateur sports clubs.
 
-* Must be backed by a MySQL or MongoDB database with a Sequelize or Mongoose ORM
+## Files
+This applictaion is made up of: This is a MERN based app, using MySQL backend built into a the React framework.
 
-* Must have both GET and POST routes for retrieving and adding new data -YES
+## Installation
+Visit the site on https://teamassist.herokuapp.com/
 
-* Must deploy this application using Heroku with data. Follow our guide on [deploying MERN applications to Heroku](../04-Important/MERNHerokuDeploy.md) to do so.
+## Usage
+Look up members to see their credentials and add credentials to their profile, or look up the certification menu to ensure everyones compliance records are up to date.
 
-* Must utilize at least 2 libraries, packages, or technologies that we haven't discussed -YES
+## Screenshots
+![Skin for Maia Outrigger Club](https://github.com/DukeWilki[teamassist/blob/main/maia-skin.jpg?raw=true)
+![Skin for ACCA Dragon Boat Racing Club](https://github.com/DukeWilki[teamassist/blob/main/acca-skin.jpg?raw=true)
+![Skin for Sydney Redbacks Korfball Club](https://github.com/DukeWilki[teamassist/blob/main/redback-skin.jpg?raw=true)
 
-* Must allow for or involve the authentication of users in some way 
+## Design
+The colour scheme is inspired by a local sports club using the app. It is designed to be applicable to different teams and clubs. The team logo can be exchanged in the Public folder, the colours in the main App.css and applicable certifications in the MySQL table. It is designed to fit well on a mobile device so volunteers can update on the go, and coaches check compliance from the sidelines, beach, or where ever you train.
 
-* Must have a polished front end/UI -YES
+## License
+This application has MIT License applied.
 
-* Must have a folder structure that meets the MVC paradigm -YES
+## Contributing Guidelines
+Please don't make any contributions right now.
 
-* Must meet good quality coding standards (indentation, scoping, naming) -YES
+If you can contribute to this project, please follow these simple rules:
+* Write bug reports with detail, background, and sample code
+* Make sure commits have appropriate 
+* All changes are covered under MIT License applied to this appliction
+* Please respect the authors request if they do not want contributions on this project. 
 
-* Must protect API keys in Node with environment variables
+## Testing Instructions
+Clone it to your local drive. You will need to install npm packages. When testing, ensure no additional bugs are added when uploading to production.
 
-## Presentation Requirements 5 Mins
+## Questions
+Conatct me on gitHub at https://github.com/DukeWilki for any questions about Team Assist.
 
-Use this [project presentation template](https://docs.google.com/presentation/d/1_u8TKy5zW5UlrVQVnyDEZ0unGI2tjQPDEpA0FNuBKAw/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a quick description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to to the deployed application and the GitHub repository
-
-
-## Grading Metrics 
-
-| Metric        | Weight | 
-| ---           | ---    |
-| Concept       | 10%    | 10
-| Design        | 20%    | 20
-| Functionality | 30%    | 30
-| Collaboration | 30%    |
-| Presentation  | 10%    | 10
-
-
-## Submission on BCS
-
-You are required to submit the following:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository
